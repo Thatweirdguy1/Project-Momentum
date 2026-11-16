@@ -4,6 +4,8 @@
 
 **A calmer fitness workspace: one next action, honest estimates, and a way back after missed days.**
 
+[Open the HTTPS food diary](https://thatweirdguy1.github.io/Project-Momentum/web/diary.html) on Windows or iPhone. Each browser has its own local diary; devices do not synchronize. Export a backup to move records between them.
+
 This build includes a persistent local food diary, calculator/reference workspace and original dark web/iPhone designs. It is **not** the complete native iPhone/Apple Watch/Windows ecosystem. No cloud account, HealthKit, sync or workout recorder is connected.
 
 ![Momentum food diary — synthetic test records](design/screenshots/food-diary-desktop.png)
