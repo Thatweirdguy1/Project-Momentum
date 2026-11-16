@@ -2,6 +2,8 @@
 
 Momentum now opens to a functioning food diary at `web/diary.html`. The existing calculator/reference workspace remains at `web/tools.html`. The diary follows MyFitnessPal's familiar meal-based workflow using original Momentum styling and independently sourced nutrition data. It is not an exact copy or a claim of complete MyFitnessPal parity.
 
+The sanitized static build is also published through GitHub Pages at [the HTTPS preview](https://thatweirdguy1.github.io/Project-Momentum/web/diary.html). Windows and iPhone browsers each retain independent local records. Hosting source files does not create cross-device diary synchronization. A restrictive page content policy allows local assets and the explicit Open Food Facts connection only.
+
 ## Implemented
 
 | Workflow | Behavior |

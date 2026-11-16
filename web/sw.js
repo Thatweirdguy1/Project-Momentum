@@ -1,5 +1,5 @@
-const CACHE='momentum-diary-v4';
-const FILES=['./index.html','./diary.html','./tools.html','./style.css','./diary.css','./diary.mjs','./diary-model.mjs','./diary-store.mjs','./csv.mjs','./barcode.mjs','./app.mjs','./calculators/engine.mjs','./calculators/catalog.mjs','./manifest.webmanifest','../data/nutrition/usda_macros.csv','../data/nutrition/usda_diary_micronutrients.csv'];
+const CACHE='momentum-diary-v5';
+const FILES=['./index.html','./diary.html','./tools.html','./style.css','./diary.css','./diary.mjs','./diary-model.mjs','./diary-store.mjs','./csv.mjs','./barcode.mjs','./app.mjs','./calculators/engine.mjs','./calculators/catalog.mjs','./manifest.webmanifest','./icon.svg','../data/nutrition/usda_macros.csv','../data/nutrition/usda_diary_micronutrients.csv'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(self.clients.claim()));
 const allowed=new Set(FILES.map(f=>new URL(f,self.location).href));

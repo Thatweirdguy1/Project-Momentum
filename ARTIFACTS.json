@@ -1,7 +1,7 @@
 {
   "release": "v0.2.0-diary",
   "generated_date": "2026-11-16",
-  "note": "Checksums cover staged LF-normalized files, excluding this manifest. No private diary records, source memorandum or local-only datasets.",
+  "note": "Git-staged LF-normalized content, excluding this manifest. No private user diary, memorandum or local-only data. Screenshots use synthetic isolated test records.",
   "files": [
     {
       "path": ".gitattributes",
@@ -19,14 +19,19 @@
       "sha256": "3545c2936f904c5e9a67ecf141dbfbdaa8d55e7c36c01b5b05d8a62b18db5d6b"
     },
     {
+      "path": ".nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
       "path": "CHANGELOG.md",
       "bytes": 2061,
       "sha256": "60e71443f7b7c520467ef59d681d0357519a1819baf64668730d0709a7cb7acd"
     },
     {
       "path": "README.md",
-      "bytes": 6229,
-      "sha256": "5b33d9552eec1bafa17b2154fd19b4d6ce4b479bddefac679e0f59169098351b"
+      "bytes": 6457,
+      "sha256": "5691f377d164ff7ab54bfbdf8f2b3aa71b5e38b0ba422d14e89774ef381bdb1c"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -250,8 +255,8 @@
     },
     {
       "path": "docs/FOOD_DIARY.md",
-      "bytes": 6827,
-      "sha256": "7ee9c43aba46b80d6e244d208d650b4e9303fbbe84b3113e81bb21aa3e27747b"
+      "bytes": 7227,
+      "sha256": "1f045b765e367618bbe1f739f9f686d006df5eeb233341a829ddbc14b7a8aa92"
     },
     {
       "path": "docs/KNOWN_LIMITATIONS.md",
@@ -277,6 +282,11 @@
       "path": "docs/VALIDATION.md",
       "bytes": 3060,
       "sha256": "724fc57bb7402027c6bde25aad260780c4ce23a0281251522528a5a6b8411bc7"
+    },
+    {
+      "path": "index.html",
+      "bytes": 408,
+      "sha256": "17e0985a8f71d931f2db21c29c631b155096a1bc88fb654c63f5bfd6eec357aa"
     },
     {
       "path": "requirements-data.txt",
@@ -405,13 +415,18 @@
     },
     {
       "path": "web/diary.html",
-      "bytes": 9516,
-      "sha256": "0acc99f3401be2fb1d78fcfcce7d7ea1599118f0c5b582d883c314f4014e2aae"
+      "bytes": 9755,
+      "sha256": "faa5fe817120ed2f12aed82ffe98bba90d5c7206a00117976228e802127a5600"
     },
     {
       "path": "web/diary.mjs",
       "bytes": 22416,
       "sha256": "7702af5dc53dd1623e921f3b303fa1358dfe2705ae7d30759defa49f3679c246"
+    },
+    {
+      "path": "web/icon.svg",
+      "bytes": 206,
+      "sha256": "f755da5d9bf184a13d4597e98183b0434d0c7c0c4357ab0c47fa32e7d058dd64"
     },
     {
       "path": "web/index.html",
@@ -420,8 +435,8 @@
     },
     {
       "path": "web/manifest.webmanifest",
-      "bytes": 158,
-      "sha256": "161f16ec455ca4a3da8639375b2d6e460b824a54f76bada1a477f06908b9a7f2"
+      "bytes": 255,
+      "sha256": "c9b4855db28f0aa6594f370442f9783adec9cc118f4537e947825f28be721d8f"
     },
     {
       "path": "web/style.css",
@@ -430,8 +445,8 @@
     },
     {
       "path": "web/sw.js",
-      "bytes": 915,
-      "sha256": "8575e7dd37095ac9ac015b5238f8ce8214b8facc405c7ed86bf6a76c16b8882d"
+      "bytes": 928,
+      "sha256": "9b5edb66e163c69d91bf1039cf00724ec87d23f8c5246cbbc9c6c55926b0092c"
     },
     {
       "path": "web/tools.html",
