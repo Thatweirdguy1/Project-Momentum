@@ -1,5 +1,7 @@
 # Validation performed
 
+For v0.2.0 diary persistence, serving arithmetic, recipe snapshots, offline/cross-tab checks, backup/restore and controlled barcode testing, see [FOOD_DIARY.md](FOOD_DIARY.md). Those tests ran in isolated browser contexts with synthetic records. Earlier calculator/reference results below remain valid for `web/tools.html` after the diary became the default entry point.
+
 Executed 16 November 2026 on Windows with Node 24.18.0 and Python 3.13.
 
 | Check | Result | Scope |

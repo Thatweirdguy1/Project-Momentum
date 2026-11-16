@@ -1,5 +1,7 @@
 # Third-party sources and publication boundaries
 
+Optional barcode lookups use Open Food Facts API v2. Returned product-label records retain Open Food Facts/ODbL attribution in local snapshots and exports. No Open Food Facts bulk database or product images are redistributed. See its [API licensing guidance](https://openfoodfacts.github.io/openfoodfacts-server/api/tutorials/license-be-on-the-legal-side/). Review ODbL obligations before publicly distributing a derived database.
+
 USDA FoodData Central data: public domain / CC0 1.0, per [USDA's licensing statement](https://fdc.nal.usda.gov/). Source/version/IDs remain in the records. Attribution is supplied in the nutrition documentation.
 
 Exercise metadata and instruction text: Copyright (c) 2026 Hasan Emir Yıldırım; MIT license, reproduced in `data/exercises/upstream-LICENSE`. The accompanying upstream media exception and NOTICE remain intact. No Gym visual image/GIF assets are redistributed or hotlinked by this app.

@@ -4,11 +4,13 @@
 
 **A calmer fitness workspace: one next action, honest estimates, and a way back after missed days.**
 
-This milestone includes a working local calculator/reference workspace and original dark web/iPhone designs. It is **not** the complete native iPhone/Apple Watch/Windows ecosystem. No live account, HealthKit, cloud sync, workout recorder or personal health-data processing is connected.
+This build includes a persistent local food diary, calculator/reference workspace and original dark web/iPhone designs. It is **not** the complete native iPhone/Apple Watch/Windows ecosystem. No cloud account, HealthKit, sync or workout recorder is connected.
 
-![Momentum local calculator workspace](design/screenshots/local-calculators.png)
+![Momentum food diary — synthetic test records](design/screenshots/food-diary-desktop.png)
 
 ## What is included
+
+- **A working meal-based food diary**: portion search/review, recent/frequent/favorite foods, quick add, edit/delete/undo, meal copying, saved meals, custom foods, cooked-yield recipes, nutrient reports, manual goals, water, notes, history, backup/restore and offline browser storage. [Food diary capabilities and limits](docs/FOOD_DIARY.md).
 
 - **28 local calculator categories** covering fitness, nutrition, reproductive calendars and selected health reference equations. Inputs stay in browser memory; visible methods and limits accompany results. [Supported methods](docs/CALCULATORS.md).
 - **13,649 USDA foods** with calories/macros and **1,019,278 nutrient observations**, source IDs/versions, explicit units and quality flags. [Data details](docs/NUTRITION_DATA.md).
@@ -29,7 +31,7 @@ cd Project-Momentum
 python -m http.server 8765 --bind 127.0.0.1
 ```
 
-Open [the local workspace](http://127.0.0.1:8765/web/index.html) or [the design gallery](http://127.0.0.1:8765/design/index.html). Use HTTP rather than double-clicking files so the browser can load reference datasets. The functional workspace uses local assets and standard browser modules. Stitch HTML concepts separately reference external fonts/Tailwind CDNs.
+Open [the food diary](http://127.0.0.1:8765/web/diary.html), [calculators/reference tools](http://127.0.0.1:8765/web/tools.html), or [the design gallery](http://127.0.0.1:8765/design/index.html). Use HTTP rather than double-clicking files. Local diary storage is specific to your browser/profile/origin; export backups before clearing browser data or moving devices. Offline launch/search works after successful first caching. Barcode lookup requires network access and is optional. Stitch HTML concepts separately reference external fonts/Tailwind CDNs.
 
 Calculator results are informational estimates, not diagnosis, treatment, medication dosing, fertility confirmation or driving/sobriety clearance. All 28 categories are implemented with the selected methods documented; complete Calculator.net option parity is not claimed. Nothing automatically changes calorie targets, training plans or saved health records.
 
@@ -51,6 +53,8 @@ Scrapling collected public material. REA inspected a bounded selection of public
 
 ```powershell
 node web/calculators/engine.test.mjs
+node web/diary-model.test.mjs
+node web/barcode.test.mjs
 python scripts/validate_artifacts.py
 ```
 

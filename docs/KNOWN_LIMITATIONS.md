@@ -1,5 +1,7 @@
 # Known limitations
 
+The v0.2.0 local food diary is functional; see [FOOD_DIARY.md](FOOD_DIARY.md) for its tested scope and exact remaining differences from MyFitnessPal. Earlier design-only limitations below apply to the original Stitch concepts, not the new diary controls. The diary is browser-local, requires a first successful cache fill for offline launch, and needs regular exports. Live barcode-service availability is unverified; no photo/voice AI or native/cloud integration is connected.
+
 - This repository is a research/design and local-tools milestone. The 28 selected calculator methods and reference-data explorers work locally. Stitch HTML controls are primarily static. There is no functioning account, backend, native app, live AI, HealthKit or sync connection.
 - Public-source collection is bounded, not an exhaustive competitor data export. No private food database, commercial programs or in-app video files are included.
 - No competitor binary was inspected. An iPhone installation is not an Android APK or an automatically readable iOS artifact.

@@ -12,5 +12,8 @@ jobs:
         with:
           python-version: '3.13'
       - run: node web/calculators/engine.test.mjs
+      - run: node web/diary-model.test.mjs
+      - run: node web/barcode.test.mjs
+      - run: node --check web/diary.mjs
       - run: node --check web/app.mjs
       - run: python scripts/validate_artifacts.py

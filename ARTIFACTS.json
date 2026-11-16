@@ -1,7 +1,7 @@
 {
-  "release": "v0.1.0-research",
+  "release": "v0.2.0-diary",
   "generated_date": "2026-11-16",
-  "note": "Checksums cover Git-staged LF-normalized files; manifest excludes itself. Private source memorandum, raw captures and INDB rows excluded.",
+  "note": "Checksums cover staged LF-normalized files, excluding this manifest. No private diary records, source memorandum or local-only datasets.",
   "files": [
     {
       "path": ".gitattributes",
@@ -10,8 +10,8 @@
     },
     {
       "path": ".github/workflows/validate.yml",
-      "bytes": 468,
-      "sha256": "4203dfaa121a558427cf2d1b446a2891f3bb17f5a0db92108994d5880585ec58"
+      "bytes": 590,
+      "sha256": "32fb23002b7d883e287f42c99d2ba457bea9268ba4a3d1fd9bff9ef44569ce1f"
     },
     {
       "path": ".gitignore",
@@ -20,18 +20,18 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 1085,
-      "sha256": "be376319529374d284f0a51f91f91efe3e0a4c2309c81b9160f9a3ddbd5632b5"
+      "bytes": 2061,
+      "sha256": "60e71443f7b7c520467ef59d681d0357519a1819baf64668730d0709a7cb7acd"
     },
     {
       "path": "README.md",
-      "bytes": 5652,
-      "sha256": "255da42cd2ede1e61980696abcfac8ccc2db8d10140a591a96b85b02d3bb9174"
+      "bytes": 6229,
+      "sha256": "5b33d9552eec1bafa17b2154fd19b4d6ce4b479bddefac679e0f59169098351b"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "bytes": 1473,
-      "sha256": "7d87ad859bc40fa5728815a2a796ba2407dc75b2eb25cb1d32f68c6c87ebff23"
+      "bytes": 1905,
+      "sha256": "b032d7d8d6662637cc4bb8fe1e5917bb0e98a92c983d72ef9c771a13399d989a"
     },
     {
       "path": "data/exercises/exercises.json",
@@ -79,6 +79,11 @@
       "sha256": "7cdb245e21501ab17225da77fc08abadc4c249a515f869238014fb41767d08be"
     },
     {
+      "path": "data/nutrition/usda_diary_micronutrients.csv",
+      "bytes": 988673,
+      "sha256": "d28d49eb7098ae869005f4b43519b554cf34b04657bae8a7d2117e1cda232ad3"
+    },
+    {
       "path": "data/nutrition/usda_macros.csv",
       "bytes": 3056249,
       "sha256": "aacc49195322b220197a43d320ad15e70096faa60e065fdf8f21ab37d33755bd"
@@ -122,6 +127,16 @@
       "path": "design/screens.json",
       "bytes": 2476,
       "sha256": "d82ebb97f5a23bec3f5cd78ab9254e944dbe4a15bdcdad63b9b2e2c98e1ec468"
+    },
+    {
+      "path": "design/screenshots/food-diary-desktop.png",
+      "bytes": 141908,
+      "sha256": "c545820a3f580b98ea7ec3cae6b09d6d3e09ab7ff9deeee96b750b9711097402"
+    },
+    {
+      "path": "design/screenshots/food-diary-mobile.png",
+      "bytes": 123498,
+      "sha256": "e39f0471a7044eeddc4743e7075747c7119d2393ad6291ef662a6fbd1002775f"
     },
     {
       "path": "design/screenshots/ios-meal-review.png",
@@ -234,9 +249,14 @@
       "sha256": "b5f96da3616b12ee4081676a31dc04128143a5f1677abed4a62f2bcf3daae399"
     },
     {
+      "path": "docs/FOOD_DIARY.md",
+      "bytes": 6827,
+      "sha256": "7ee9c43aba46b80d6e244d208d650b4e9303fbbe84b3113e81bb21aa3e27747b"
+    },
+    {
       "path": "docs/KNOWN_LIMITATIONS.md",
-      "bytes": 2552,
-      "sha256": "c1dc5fe0524e012d9e0c889625e6d466cffd3a51d6bfb03c8e2a2dd7318272cf"
+      "bytes": 3031,
+      "sha256": "96ccb51bf575b4aa5848e41623c01f28ab87ff82ba33e837d1e4ce3ab22f1632"
     },
     {
       "path": "docs/NUTRITION_DATA.md",
@@ -255,8 +275,8 @@
     },
     {
       "path": "docs/VALIDATION.md",
-      "bytes": 2688,
-      "sha256": "ce9fad94459e90d757199b7bb4ebb3e336dee6b328f9bb28784f6b80c21cbdb9"
+      "bytes": 3060,
+      "sha256": "724fc57bb7402027c6bde25aad260780c4ce23a0281251522528a5a6b8411bc7"
     },
     {
       "path": "requirements-data.txt",
@@ -279,6 +299,11 @@
       "sha256": "06561f08baf6667def9e252a33e45ae840343d72fc466a51c6b70591aad3df40"
     },
     {
+      "path": "scripts/build_diary_micronutrients.py",
+      "bytes": 1173,
+      "sha256": "11ced2aa2b69f259e324ccd07cda601903851143ad76c5eb6df71370cd506922"
+    },
+    {
       "path": "scripts/build_gallery.py",
       "bytes": 2027,
       "sha256": "8c1402d65f635c8e55c5a080ef276878c957041d3c810575ceee0d94336149ba"
@@ -287,6 +312,11 @@
       "path": "scripts/collect_exercises.py",
       "bytes": 5858,
       "sha256": "08774166407a7945832ccafae185d5932ad9ee6e3596baed5fa566529e2adc63"
+    },
+    {
+      "path": "scripts/diary-browser-check.js",
+      "bytes": 5502,
+      "sha256": "0ecc7e799d10adde6e35a6e07b03a83e583a21abcf1f86f6a37b1832501e88ff"
     },
     {
       "path": "scripts/download_nutrition.py",
@@ -320,8 +350,18 @@
     },
     {
       "path": "web/app.mjs",
-      "bytes": 6298,
-      "sha256": "424d006c39a06cdf79fe57d9520e799a67948da5c66bbeb6100d22470f8ff4b3"
+      "bytes": 5709,
+      "sha256": "3790133d2d46e82d284550ec5627395fd35613c7b21391fa374f587f5699646c"
+    },
+    {
+      "path": "web/barcode.mjs",
+      "bytes": 2549,
+      "sha256": "d5bd2fc6af42c6a7506eb6eab3dd033b032fa93e4650766e86aa7d35b3ba7417"
+    },
+    {
+      "path": "web/barcode.test.mjs",
+      "bytes": 878,
+      "sha256": "d27f4616bf46ddf1161ce41a820015819546df5826d896b39790f381376c3fdf"
     },
     {
       "path": "web/calculators/catalog.mjs",
@@ -339,14 +379,64 @@
       "sha256": "74770e22140caccf54c9ec65a77c283825cccf9499ab4c62b1d66763055d5139"
     },
     {
+      "path": "web/csv.mjs",
+      "bytes": 626,
+      "sha256": "e83f7543ab6bae621d27234df416101a4ca2323e9e110fd55af7d1be7be29290"
+    },
+    {
+      "path": "web/diary-model.mjs",
+      "bytes": 6961,
+      "sha256": "f24b789a3ea1fc2e20d4567b3cade4243f11b9d9878d44146119aeea0377eb55"
+    },
+    {
+      "path": "web/diary-model.test.mjs",
+      "bytes": 2555,
+      "sha256": "0d624cd3e371bff9d7c2ad990f633ec724ff35e35d88464bd2cb75c22ed042c5"
+    },
+    {
+      "path": "web/diary-store.mjs",
+      "bytes": 1453,
+      "sha256": "181e5bc7a7aecf14e01cc00ff1c1e7cbfe50a30b9aeba29f4d18888cd166a2d0"
+    },
+    {
+      "path": "web/diary.css",
+      "bytes": 4085,
+      "sha256": "334ec05d11925a6f65fbcb4cb9dd3170a43c288d762ce1a1ea31c0ef48b14fd5"
+    },
+    {
+      "path": "web/diary.html",
+      "bytes": 9516,
+      "sha256": "0acc99f3401be2fb1d78fcfcce7d7ea1599118f0c5b582d883c314f4014e2aae"
+    },
+    {
+      "path": "web/diary.mjs",
+      "bytes": 22416,
+      "sha256": "7702af5dc53dd1623e921f3b303fa1358dfe2705ae7d30759defa49f3679c246"
+    },
+    {
       "path": "web/index.html",
-      "bytes": 4399,
-      "sha256": "962453eb1846284d39f2de716f1a6496a1cd534340e96631bf80b41dc1a8514f"
+      "bytes": 183,
+      "sha256": "c69c6b2852fe377427ee1b2c0c73779e5e15c8bf1d8a133098057dbde4b4e765"
+    },
+    {
+      "path": "web/manifest.webmanifest",
+      "bytes": 158,
+      "sha256": "161f16ec455ca4a3da8639375b2d6e460b824a54f76bada1a477f06908b9a7f2"
     },
     {
       "path": "web/style.css",
       "bytes": 4075,
       "sha256": "1b729864aa9f8dd2347da9e31c8f1cc4e54754b2f89881aed433a7eb4e5a1b75"
+    },
+    {
+      "path": "web/sw.js",
+      "bytes": 915,
+      "sha256": "8575e7dd37095ac9ac015b5238f8ce8214b8facc405c7ed86bf6a76c16b8882d"
+    },
+    {
+      "path": "web/tools.html",
+      "bytes": 4438,
+      "sha256": "2c9a68b9ec4e8f42bf3d334e6b6e4de41bd725c6a5105843b75dfe1c11c156c9"
     }
   ]
 }
