@@ -1,0 +1,72 @@
+[
+  {
+    "title": "Momentum - Today Dashboard",
+    "resource": "projects/6081622018842562931/screens/ea49ea7458734a00bd24508aca1c2c5f",
+    "device": "DESKTOP",
+    "html": "web/today.html",
+    "screenshot": "screenshots/web-today.png"
+  },
+  {
+    "title": "Momentum - Training Editor",
+    "resource": "projects/6081622018842562931/screens/54d60ff0b92f4edfb7eca404c422cc9b",
+    "device": "DESKTOP",
+    "html": "web/training.html",
+    "screenshot": "screenshots/web-training.png"
+  },
+  {
+    "title": "Momentum - Weekly Plan",
+    "resource": "projects/6081622018842562931/screens/4381a7a673314662bb6a559015985ce9",
+    "device": "DESKTOP",
+    "html": "web/plan.html",
+    "screenshot": "screenshots/web-plan.png"
+  },
+  {
+    "title": "Momentum - Food & Recipe Editor",
+    "resource": "projects/6081622018842562931/screens/f66ef9b40bd547f8aa62150a4c0aab3a",
+    "device": "DESKTOP",
+    "html": "web/food.html",
+    "screenshot": "screenshots/web-food.png"
+  },
+  {
+    "title": "Momentum - Progress & Trends",
+    "resource": "projects/6081622018842562931/screens/21d73a4f8d344b51847b4f949270ad75",
+    "device": "DESKTOP",
+    "html": "web/progress.html",
+    "screenshot": "screenshots/web-progress.png"
+  },
+  {
+    "title": "Momentum - Settings & Privacy",
+    "resource": "projects/6081622018842562931/screens/81b38cb051e34f3e8058264592cde635",
+    "device": "DESKTOP",
+    "html": "web/settings.html",
+    "screenshot": "screenshots/web-settings.png"
+  },
+  {
+    "title": "Momentum Today Dashboard (iOS)",
+    "resource": "projects/6081622018842562931/screens/3342315f52a44f0d9f87b176f040431d",
+    "device": "MOBILE",
+    "html": "ios/today.html",
+    "screenshot": "screenshots/ios-today.png"
+  },
+  {
+    "title": "Momentum Active Workout (iOS)",
+    "resource": "projects/6081622018842562931/screens/fe7c3c35fece494bbca540ba671297bb",
+    "device": "MOBILE",
+    "html": "ios/workout.html",
+    "screenshot": "screenshots/ios-workout.png"
+  },
+  {
+    "title": "Momentum Meal Review (iOS)",
+    "resource": "projects/6081622018842562931/screens/9340c6f650434a08b0cdc59d0ddf4075",
+    "device": "MOBILE",
+    "html": "ios/meal-review.html",
+    "screenshot": "screenshots/ios-meal-review.png"
+  },
+  {
+    "title": "Momentum Missed-Day Recovery (iOS)",
+    "resource": "projects/6081622018842562931/screens/38654ac6f94645e9ae4f7b5c3712e8b6",
+    "device": "MOBILE",
+    "html": "ios/recovery.html",
+    "screenshot": "screenshots/ios-recovery.png"
+  }
+]

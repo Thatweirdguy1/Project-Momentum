@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Momentum - Active Workout Session</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-bright": "#323949",
+            "error": "#ffb4ab",
+            "on-tertiary-fixed": "#0d1c2d",
+            "on-secondary-fixed": "#2b1700",
+            "secondary": "#f5bc7e",
+            "surface-dim": "#0c1321",
+            "background": "#0c1321",
+            "primary": "#75f3da",
+            "on-primary-fixed": "#00201b",
+            "inverse-on-surface": "#2a3040",
+            "surface": "#0c1321",
+            "on-secondary-container": "#e5ae71",
+            "secondary-fixed": "#ffddbb",
+            "outline": "#86948f",
+            "outline-variant": "#3c4946",
+            "on-primary-container": "#005a4d",
+            "inverse-surface": "#dce2f6",
+            "on-error": "#690005",
+            "on-secondary": "#482900",
+            "on-primary": "#00382f",
+            "on-surface": "#dce2f6",
+            "surface-container-lowest": "#070e1c",
+            "surface-variant": "#2e3544",
+            "surface-container-low": "#151b2a",
+            "tertiary-container": "#b4c3d9",
+            "surface-container-highest": "#2e3544",
+            "on-error-container": "#ffdad6",
+            "secondary-container": "#67400d",
+            "tertiary-fixed": "#d4e4fa",
+            "tertiary": "#d0dff5",
+            "on-tertiary-container": "#425063",
+            "secondary-fixed-dim": "#f5bc7e",
+            "surface-container": "#19202e",
+            "on-tertiary": "#233143",
+            "surface-container-high": "#232a39",
+            "primary-fixed-dim": "#5bdbc3",
+            "inverse-primary": "#006b5c",
+            "primary-fixed": "#7af8de",
+            "tertiary-fixed-dim": "#b9c8de",
+            "on-primary-fixed-variant": "#005045",
+            "on-surface-variant": "#bbcac5",
+            "on-tertiary-fixed-variant": "#39485a",
+            "primary-container": "#55d6be",
+            "error-container": "#93000a",
+            "on-background": "#dce2f6",
+            "surface-tint": "#5bdbc3",
+            "on-secondary-fixed-variant": "#653e0b"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "margin": "1.5rem",
+            "gutter-desktop": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-lg": "1.5rem",
+            "gutter": "1.25rem",
+            "margin-desktop": "2rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Plus Jakarta Sans"],
+            "display-lg": ["Space Grotesk"],
+            "label-md": ["Space Grotesk"],
+            "headline-sm": ["Space Grotesk"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Space Grotesk"],
+            "numeric-data": ["Space Grotesk"],
+            "label-lg": ["Space Grotesk"],
+            "headline-md": ["Space Grotesk"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Space Grotesk"],
+            "numeric-metric": ["Space Grotesk"]
+          },
+          "fontSize": {
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "500" }],
+            "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "numeric-data": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "numeric-metric": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+    /* iOS Momentum safe areas */
+    .pt-safe {
+      padding-top: env(safe-area-inset-top, 44px);
+    }
+    .pb-safe {
+      padding-bottom: env(safe-area-inset-bottom, 34px);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased select-none min-h-screen flex flex-col justify-between overflow-x-hidden font-body-md">
+<!-- Main Container constrained to mobile phone frame on desktop, 100% on iOS viewport -->
+<div class="w-full max-w-md mx-auto flex flex-col min-h-screen bg-surface relative shadow-2xl">
+<!-- STICKY iOS TOP SYSTEM & NAV BAR -->
+<header class="sticky top-0 z-40 bg-surface-container-low/95 backdrop-blur-md">
+<!-- iOS Native Status Bar Simulation -->
+<div class="h-11 px-6 flex justify-between items-center text-on-surface-variant font-label-md text-label-md tracking-tight">
+<span class="font-semibold text-on-surface">9:41</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[16px]">wifi</span>
+<span class="material-symbols-outlined text-[18px]">battery_charging_full</span>
+</div>
+</div>
+<!-- Shared TopAppBar Component -->
+<nav aria-label="Active session navigation" class="flex justify-between items-center w-full px-margin h-14">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">cloud_done</span>
+<span class="text-headline-md font-headline-md font-semibold text-primary tracking-tight">Momentum</span>
+</div>
+<div class="flex items-center gap-2">
+<!-- Session context / finish button -->
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-variant text-on-surface font-label-md text-label-md transition-colors active:scale-95 focus:outline-none focus:ring-2 focus:ring-primary" type="button">
+            Finish Workout
+          </button>
+</div>
+</nav>
+<!-- Simulated Companion Connectivity Pill (ADHD Low-Stimulation / Clear Feedback) -->
+<div class="px-margin pb-2.5">
+<div class="flex items-center justify-between px-3 py-1.5 rounded-lg bg-secondary-container/20 border border-secondary/30">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-label-sm text-label-sm text-secondary tracking-normal">Demo state • Waiting for phone</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">UPPER &amp; CORE</span>
+</div>
+</div>
+</header>
+<!-- SCROLLABLE WORKOUT CANVAS -->
+<main aria-label="Workout Content" class="flex-1 px-margin pt-4 pb-24 space-y-4" role="region">
+<!-- ACTIVE EXERCISE HEADER CARD -->
+<section aria-labelledby="exercise-heading" class="rounded-xl bg-surface-container-low p-4 border border-outline-variant/30 space-y-3">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Exercise 1 of 5</span>
+<h1 class="text-headline-lg font-headline-lg text-on-surface tracking-tight mt-0.5" id="exercise-heading">
+              Goblet Squat (DB)
+            </h1>
+</div>
+<button aria-label="Exercise info and demonstration guide" class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">help_outline</span>
+</button>
+</div>
+<!-- Historical Benchmark Anchor Badge (Zero Guilt, Pure Reference) -->
+<div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-container-lowest/80 border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[18px]">history</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Last Session: <span class="font-numeric-data text-numeric-data text-on-surface font-semibold">24.0 kg × 10 reps</span> <span class="text-outline">@ RIR 2</span>
+</p>
+</div>
+<!-- Quick Adaptability Actions Row (Elastic Workouts: Swap or Soft Discomfort Stop) -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-surface-variant text-on-surface font-label-md text-label-md active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-tertiary">swap_horiz</span>
+<span>Swap Exercise</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-surface-variant text-secondary font-label-md text-label-md active:scale-95 transition-all" title="Safely log without penalties or failure alerts" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">flag</span>
+<span>Pain / Discomfort Flag</span>
+</button>
+</div>
+</section>
+<!-- CURRENT SET INTERACTION CARD -->
+<section aria-labelledby="current-set-title" class="rounded-xl bg-surface-container p-4 border border-outline-variant/40 shadow-sm space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary/20 text-primary font-label-sm text-label-sm font-bold">2</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface" id="current-set-title">Set 2 of 4 <span class="text-outline text-body-sm font-normal">• Work Set</span></h2>
+</div>
+<!-- Capacity Indicator -->
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm bg-primary/10 text-primary border border-primary/20">Normal Effort</span>
+</div>
+<!-- High-Contrast Friendly Steppers (ADHD Optimized: 48pt+ hit targets) -->
+<div class="grid grid-cols-2 gap-3">
+<!-- Stepper 1: Weight (kg) -->
+<div class="p-3 rounded-lg bg-surface-container-low border border-outline-variant/30 flex flex-col items-center">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-1 uppercase tracking-wider" for="input-weight">Weight (kg)</label>
+<div class="flex items-center justify-between w-full mt-1">
+<button aria-label="Decrease weight by 0.5 kilograms" class="w-12 h-12 rounded-lg bg-surface-variant hover:bg-surface-bright active:scale-95 text-on-surface flex items-center justify-center transition-all focus:outline-none focus:ring-2 focus:ring-primary" id="btn-weight-sub" type="button">
+<span class="material-symbols-outlined text-[22px]">remove</span>
+</button>
+<div class="text-center px-1">
+<input aria-live="polite" class="w-20 bg-transparent text-center font-numeric-metric text-numeric-metric text-on-surface focus:outline-none focus:ring-0 border-0 p-0" id="input-weight" step="0.5" type="number" value="26.0"/>
+<span class="font-body-sm text-body-sm text-outline block -mt-1">kg</span>
+</div>
+<button aria-label="Increase weight by 0.5 kilograms" class="w-12 h-12 rounded-lg bg-surface-variant hover:bg-surface-bright active:scale-95 text-on-surface flex items-center justify-center transition-all focus:outline-none focus:ring-2 focus:ring-primary" id="btn-weight-add" type="button">
+<span class="material-symbols-outlined text-[22px]">add</span>
+</button>
+</div>
+</div>
+<!-- Stepper 2: Reps -->
+<div class="p-3 rounded-lg bg-surface-container-low border border-outline-variant/30 flex flex-col items-center">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-1 uppercase tracking-wider" for="input-reps">Target Reps</label>
+<div class="flex items-center justify-between w-full mt-1">
+<button aria-label="Decrease reps count" class="w-12 h-12 rounded-lg bg-surface-variant hover:bg-surface-bright active:scale-95 text-on-surface flex items-center justify-center transition-all focus:outline-none focus:ring-2 focus:ring-primary" id="btn-reps-sub" type="button">
+<span class="material-symbols-outlined text-[22px]">remove</span>
+</button>
+<div class="text-center px-1">
+<input aria-live="polite" class="w-16 bg-transparent text-center font-numeric-metric text-numeric-metric text-on-surface focus:outline-none focus:ring-0 border-0 p-0" id="input-reps" type="number" value="10"/>
+<span class="font-body-sm text-body-sm text-outline block -mt-1">reps</span>
+</div>
+<button aria-label="Increase reps count" class="w-12 h-12 rounded-lg bg-surface-variant hover:bg-surface-bright active:scale-95 text-on-surface flex items-center justify-center transition-all focus:outline-none focus:ring-2 focus:ring-primary" id="btn-reps-add" type="button">
+<span class="material-symbols-outlined text-[22px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- RIR Capacity Selector Segment -->
+<div class="space-y-1.5 pt-1">
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-on-surface-variant">RIR (Reps in Reserve)</span>
+<span class="text-primary font-semibold" id="rir-indicator-text">2 reps before failure</span>
+</div>
+<div aria-label="Reps in reserve selection" class="grid grid-cols-4 gap-1.5 p-1 rounded-lg bg-surface-container-low border border-outline-variant/30" role="radiogroup">
+<button aria-checked="false" class="rir-btn py-2 text-center rounded text-label-md font-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-label="Absolute failure (0 RIR)" data-rir="0" role="radio" type="button">0</button>
+<button aria-checked="false" class="rir-btn py-2 text-center rounded text-label-md font-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-label="1 rep left in tank" data-rir="1" role="radio" type="button">1</button>
+<button aria-checked="true" class="rir-btn py-2 text-center rounded text-label-md font-label-md bg-primary-container text-on-primary-container font-semibold transition-colors" data-label="2 reps before failure" data-rir="2" role="radio" type="button">2</button>
+<button aria-checked="false" class="rir-btn py-2 text-center rounded text-label-md font-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-label="3 or more reserve (Easy)" data-rir="3+" role="radio" type="button">3+</button>
+</div>
+</div>
+<!-- Bold High-Hit CTA (Height 52pt / 52px) -->
+<button class="w-full h-[52px] rounded-xl bg-primary-container hover:bg-primary-fixed text-on-primary-container font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 shadow-lg active:scale-[0.98] transition-transform focus:outline-none focus:ring-4 focus:ring-primary/40" id="btn-complete-set" type="button">
+<span class="material-symbols-outlined text-[24px]">check_circle</span>
+<span>Complete Set 2</span>
+</button>
+</section>
+<!-- REST INTERVAL TIMER (Non-Punitive, Elastic Support) -->
+<section aria-labelledby="rest-timer-label" class="rounded-xl bg-surface-container-low p-4 border border-outline-variant/30 space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">timer</span>
+<span class="font-headline-sm text-headline-sm text-on-surface" id="rest-timer-label">Target Rest Interval</span>
+</div>
+<span class="text-label-sm font-label-sm px-2 py-0.5 rounded bg-surface-container text-outline">Autonomous</span>
+</div>
+<!-- Timer Graphic & Controls -->
+<div class="flex items-center justify-between gap-4 py-1">
+<div class="flex items-baseline gap-1.5">
+<span class="font-numeric-metric text-display-lg text-on-surface font-semibold tracking-tight" id="timer-display">01:45</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">remaining</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="h-9 px-3 rounded-lg bg-surface-container hover:bg-surface-variant border border-outline-variant/30 text-on-surface font-label-md text-label-md active:scale-95 transition-all" id="btn-add-time" type="button">
+              +30s
+            </button>
+<button class="h-9 px-3 rounded-lg bg-surface-container hover:bg-surface-variant border border-outline-variant/30 text-outline hover:text-on-surface font-label-md text-label-md active:scale-95 transition-all" id="btn-skip-rest" type="button">
+              Skip
+            </button>
+</div>
+</div>
+<!-- Linear Progress Visual -->
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-2 rounded-full transition-all duration-1000 ease-linear" id="timer-bar" style="width: 58%;"></div>
+</div>
+<!-- Neurodivergent sensory comfort: Sound toggle -->
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<label class="font-body-sm text-body-sm flex items-center gap-2 cursor-pointer" for="chime-toggle">
+<span class="material-symbols-outlined text-[18px]">volume_up</span>
+<span>Gentle chime when ready</span>
+</label>
+<input checked="" class="w-4 h-4 rounded text-primary bg-surface-container border-outline-variant/60 focus:ring-primary focus:ring-offset-surface" id="chime-toggle" type="checkbox"/>
+</div>
+</section>
+<!-- PREVIOUS SETS OVERVIEW TABLE (Scaffolding working memory) -->
+<section class="rounded-xl bg-surface-container-low/60 p-3.5 border border-outline-variant/20 space-y-2">
+<h3 class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Session Progression</h3>
+<div class="space-y-1.5">
+<div class="flex items-center justify-between py-1.5 px-3 rounded bg-surface-container/50 text-body-sm font-numeric-data">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+<span class="text-on-surface">Set 1: Warmup</span>
+</div>
+<span class="text-on-surface-variant">20.0 kg × 12 reps</span>
+</div>
+<div class="flex items-center justify-between py-1.5 px-3 rounded bg-surface-container/20 text-body-sm font-numeric-data border border-primary/20">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-primary font-medium">Set 2: Work Set</span>
+</div>
+<span class="text-primary">26.0 kg × 10 reps (In progress)</span>
+</div>
+<div class="flex items-center justify-between py-1.5 px-3 rounded text-body-sm font-numeric-data text-outline">
+<span class="pl-4">Set 3: Work Set</span>
+<span>26.0 kg × 10 reps</span>
+</div>
+</div>
+</section>
+</main>
+<!-- SHARED BOTTOM NAVIGATION BAR -->
+<!-- Matches JSON specification: 5 destinations, 'Train' active -->
+<nav aria-label="Global application navigation" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-space-xs pt-space-xs pb-safe h-16 min-h-[44px] bg-surface-container-low dark:bg-surface-container-low">
+<!-- Tab 1: Today -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant min-w-[44px] min-h-[44px] gap-0.5 hover:text-primary transition-colors duration-150 active:scale-95" href="#today">
+<span class="material-symbols-outlined text-[22px]">calendar_today</span>
+<span class="text-label-sm font-label-sm">Today</span>
+</a>
+<!-- Tab 2: Train (ACTIVE INTENT DESTINATION) -->
+<a aria-current="page" class="flex flex-col items-center justify-center text-primary dark:text-primary min-w-[44px] min-h-[44px] gap-0.5 font-semibold hover:text-primary transition-colors duration-150 active:scale-95" href="#train">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+<span class="text-label-sm font-label-sm">Train</span>
+</a>
+<!-- Tab 3: Food -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant min-w-[44px] min-h-[44px] gap-0.5 hover:text-primary transition-colors duration-150 active:scale-95" href="#food">
+<span class="material-symbols-outlined text-[22px]">restaurant</span>
+<span class="text-label-sm font-label-sm">Food</span>
+</a>
+<!-- Tab 4: Plan -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant min-w-[44px] min-h-[44px] gap-0.5 hover:text-primary transition-colors duration-150 active:scale-95" href="#plan">
+<span class="material-symbols-outlined text-[22px]">tune</span>
+<span class="text-label-sm font-label-sm">Plan</span>
+</a>
+<!-- Tab 5: Progress -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant min-w-[44px] min-h-[44px] gap-0.5 hover:text-primary transition-colors duration-150 active:scale-95" href="#progress">
+<span class="material-symbols-outlined text-[22px]">trending_up</span>
+<span class="text-label-sm font-label-sm">Progress</span>
+</a>
+</nav>
+</div>
+<!-- Micro-interactions Script -->
+<script>
+    // Weight Stepper
+    const weightInput = document.getElementById('input-weight');
+    document.getElementById('btn-weight-sub')?.addEventListener('click', () => {
+      let val = parseFloat(weightInput.value) || 0;
+      if (val > 1) weightInput.value = (val - 1.0).toFixed(1);
+    });
+    document.getElementById('btn-weight-add')?.addEventListener('click', () => {
+      let val = parseFloat(weightInput.value) || 0;
+      weightInput.value = (val + 1.0).toFixed(1);
+    });
+
+    // Reps Stepper
+    const repsInput = document.getElementById('input-reps');
+    document.getElementById('btn-reps-sub')?.addEventListener('click', () => {
+      let val = parseInt(repsInput.value, 10) || 0;
+      if (val > 1) repsInput.value = val - 1;
+    });
+    document.getElementById('btn-reps-add')?.addEventListener('click', () => {
+      let val = parseInt(repsInput.value, 10) || 0;
+      repsInput.value = val + 1;
+    });
+
+    // RIR Selection State
+    const rirButtons = document.querySelectorAll('.rir-btn');
+    const rirLabel = document.getElementById('rir-indicator-text');
+    rirButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        rirButtons.forEach(b => {
+          b.setAttribute('aria-checked', 'false');
+          b.className = 'rir-btn py-2 text-center rounded text-label-md font-label-md text-on-surface-variant hover:text-on-surface transition-colors';
+        });
+        btn.setAttribute('aria-checked', 'true');
+        btn.className = 'rir-btn py-2 text-center rounded text-label-md font-label-md bg-primary-container text-on-primary-container font-semibold transition-colors';
+        if (rirLabel) {
+          rirLabel.textContent = btn.getAttribute('data-label') || '';
+        }
+      });
+    });
+
+    // Rest Timer Micro-interaction
+    let totalSeconds = 105;
+    const timerDisplay = document.getElementById('timer-display');
+    const timerBar = document.getElementById('timer-bar');
+
+    function updateTimerUI() {
+      const minutes = Math.floor(totalSeconds / 60);
+      const seconds = totalSeconds % 60;
+      if (timerDisplay) {
+        timerDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+      }
+      if (timerBar) {
+        const pct = Math.min(100, Math.max(0, (totalSeconds / 180) * 100));
+        timerBar.style.width = `${pct}%`;
+      }
+    }
+
+    document.getElementById('btn-add-time')?.addEventListener('click', () => {
+      totalSeconds += 30;
+      updateTimerUI();
+    });
+
+    document.getElementById('btn-skip-rest')?.addEventListener('click', () => {
+      totalSeconds = 0;
+      updateTimerUI();
+    });
+
+    // Set Completion Simulation
+    const completeBtn = document.getElementById('btn-complete-set');
+    completeBtn?.addEventListener('click', () => {
+      completeBtn.innerHTML = `
+        <span class="material-symbols-outlined text-[24px]">done_all</span>
+        <span>Set 2 Logged</span>
+      `;
+      completeBtn.classList.remove('bg-primary-container');
+      completeBtn.classList.add('bg-surface-variant', 'text-primary');
+      setTimeout(() => {
+        completeBtn.innerHTML = `
+          <span class="material-symbols-outlined text-[24px]">check_circle</span>
+          <span>Complete Set 3</span>
+        `;
+        completeBtn.classList.add('bg-primary-container');
+        completeBtn.classList.remove('bg-surface-variant', 'text-primary');
+        totalSeconds = 120;
+        updateTimerUI();
+      }, 1200);
+    });
+  </script>
+</body></html>

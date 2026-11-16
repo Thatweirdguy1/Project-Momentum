@@ -1,0 +1,72 @@
+[
+  {
+    "source_version": "usda_foundation_2026-10-29.zip",
+    "fdc_id": 2727566,
+    "nutrient_id": 1005,
+    "source_amount": -0.475,
+    "issue": "Negative source value retained in long table; excluded from normalized macro fields"
+  },
+  {
+    "source_version": "usda_foundation_2026-10-29.zip",
+    "fdc_id": 2727567,
+    "nutrient_id": 1005,
+    "source_amount": -0.173,
+    "issue": "Negative source value retained in long table; excluded from normalized macro fields"
+  },
+  {
+    "source_version": "usda_foundation_2026-10-29.zip",
+    "fdc_id": 2727568,
+    "nutrient_id": 1005,
+    "source_amount": -0.459,
+    "issue": "Negative source value retained in long table; excluded from normalized macro fields"
+  },
+  {
+    "source_version": "usda_foundation_2026-10-29.zip",
+    "fdc_id": 2727569,
+    "nutrient_id": 1005,
+    "source_amount": -0.428,
+    "issue": "Negative source value retained in long table; excluded from normalized macro fields"
+  },
+  {
+    "source_version": "usda_foundation_2026-10-29.zip",
+    "fdc_id": 2727570,
+    "nutrient_id": 1005,
+    "source_amount": -0.251,
+    "issue": "Negative source value retained in long table; excluded from normalized macro fields"
+  },
+  {
+    "source_version": "usda_foundation_2026-10-29.zip",
+    "fdc_id": 2727571,
+    "nutrient_id": 1005,
+    "source_amount": -0.15,
+    "issue": "Negative source value retained in long table; excluded from normalized macro fields"
+  },
+  {
+    "source_version": "usda_foundation_2026-10-29.zip",
+    "fdc_id": 2727575,
+    "nutrient_id": 1005,
+    "source_amount": -0.562,
+    "issue": "Negative source value retained in long table; excluded from normalized macro fields"
+  },
+  {
+    "source_version": "usda_foundation_2026-10-29.zip",
+    "fdc_id": 2727576,
+    "nutrient_id": 1005,
+    "source_amount": -0.705,
+    "issue": "Negative source value retained in long table; excluded from normalized macro fields"
+  },
+  {
+    "source_version": "usda_foundation_2026-10-29.zip",
+    "fdc_id": 2747656,
+    "nutrient_id": 1005,
+    "source_amount": -0.06,
+    "issue": "Negative source value retained in long table; excluded from normalized macro fields"
+  },
+  {
+    "source_version": "usda_foundation_2026-10-29.zip",
+    "fdc_id": 2747673,
+    "nutrient_id": 1005,
+    "source_amount": -0.104,
+    "issue": "Negative source value retained in long table; excluded from normalized macro fields"
+  }
+]

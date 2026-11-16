@@ -1,0 +1,29 @@
+{
+  "evidence_id": "ev_f2dd9b69c2cce4b20860324f4a3284203196f3a41c06026c93a3e0fa6edb0b88",
+  "operation": "REA static analysis of acquired public calculator scripts",
+  "source_selection": {
+    "requested_paths": [
+      "bmi-calculator-0.js",
+      "bmr-calculator-0.js",
+      "calorie-calculator-0.js"
+    ],
+    "unselected_files": 90
+  },
+  "statistics": {
+    "relevant_files": 93,
+    "nested_asar_containers": 0,
+    "text_bytes_read": 6935,
+    "invalid_utf8_files": 0,
+    "parsed_javascript_files": 3,
+    "skipped_javascript_files": 0,
+    "visited_ast_nodes": 800,
+    "findings": 0,
+    "modules": 0,
+    "parse_failures": 0
+  },
+  "limitations": [
+    "Only three public inline scripts analyzed; no runtime or server-side equivalence established.",
+    "No competitor native binary inspected."
+  ],
+  "source_page_inventory": "calculator-script-inventory.json"
+}

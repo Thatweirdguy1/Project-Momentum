@@ -1,0 +1,23 @@
+{
+  "licensed_text_records": 1324,
+  "upstream_commit": "7455efae41b330c265e7cd4b78dfa848e7ce5ebd",
+  "languages": [
+    "en",
+    "es",
+    "fr",
+    "hi",
+    "it",
+    "ko",
+    "pl",
+    "ru",
+    "tr",
+    "zh"
+  ],
+  "public_directory_records": 904,
+  "listing_pages_fetched": 195,
+  "details_collected": 24,
+  "crawl_limits": "Three listing waves, max 100 pages/wave; up to eight representative details per source; incomplete catalogs explicitly retained",
+  "failures": [],
+  "media_redistributed": false,
+  "google_share_resolved_to": "https://www.acefitness.org/resources/everyone/exercise-library/"
+}

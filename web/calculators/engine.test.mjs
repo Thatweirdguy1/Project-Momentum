@@ -1,0 +1,22 @@
+import assert from 'node:assert/strict';
+import {calculate,keys} from './engine.mjs';
+const input={age:30,sex:'male',weight:80,height:180,equation:'mifflin',bodyFat:20,activity:1.55,adjustment:0,waist:90,neck:40,hip:100,bust:95,highHip:95,distance:5,minutes:30,targetDistance:10,met:5,reps:5,restingHR:60,method:'lmp',date:'2026-09-01',asof:'2026-11-16',cycle:28,embryoDays:5,weeks:10,days:0,twins:'no',calories:2000,proteinPercent:25,fatPercent:30,gramsPerKg:1.6,creatinine:1,creatinineUnit:'mgdl',drinkMl:330,abv:5,hours:1};
+for(const key of keys){const sample={...input};if(key==='pregnancy-conception')sample.date='2027-06-08';const r=calculate(key,sample);assert.ok(Object.keys(r.values).length,key);assert.ok(r.method&&r.note,key);for(const value of Object.values(r.values))if(typeof value==='number')assert.ok(Number.isFinite(value),key);}
+assert.equal(calculate('bmi',input).values['BMI (kg/m²)'],24.69);
+assert.equal(calculate('bmr',input).values['Resting energy kcal/day'],1780);
+assert.equal(calculate('tdee',input).values['Maintenance estimate kcal/day'],2759);
+assert.equal(calculate('pace',input).values['Speed km/h'],10);
+assert.equal(calculate('one-rep-max',{weight:60,reps:1}).values['Epley kg'],60);
+assert.equal(calculate('macro',input).values['Protein g'],125);
+assert.equal(calculate('macro',input).values['Carbohydrate g'],225);
+const pregnancy=calculate('due-date',input).values;
+assert.equal(pregnancy['Estimated due date'],'2027-06-08');
+assert.equal(pregnancy['Gestational age'],'10 weeks 6 days');
+assert.equal(calculate('period',{date:'2024-02-01',cycle:28}).values['Next period estimate'],'2024-02-29');
+const gfr1=calculate('gfr',input).values['eGFR mL/min/1.73m²'];
+assert.equal(gfr1,calculate('gfr',{...input,creatinine:88.4,creatinineUnit:'umol'}).values['eGFR mL/min/1.73m²']);
+assert.equal(gfr1,103.84);
+const bsa=calculate('body-surface-area',{weight:60,height:150}).values['Mosteller m²'];assert.equal(bsa,1.58);
+for(const [key,bad] of [['bmi',{...input,height:0}],['bmr',{...input,age:12}],['one-rep-max',{weight:50,reps:1.5}],['macro',{...input,proteinPercent:80,fatPercent:80}],['period',{date:'2026-02-30',cycle:28}],['body-fat',{...input,waist:30,neck:40}],['gfr',{...input,creatinine:0}],['pace',{...input,distance:''}],['protein',{...input,gramsPerKg:Infinity}]])assert.throws(()=>calculate(key,bad),undefined,key);
+assert.ok(calculate('bac',{...input,drinkMl:0}).note.includes('zero estimate'));
+console.log('28 calculators exercised; numeric fixtures, unit equivalence, leap-day dates and invalid inputs passed.');

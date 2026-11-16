@@ -1,0 +1,290 @@
+[
+  {
+    "url": "https://www.calculator.net/bmi-calculator.html",
+    "status": 200,
+    "inline_scripts": 3,
+    "external_scripts": [
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/common.js",
+      "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ],
+    "sha256": "a36fce9d9977addef3ce7d33c340e930d5d4474ec40a79e1e00dd6dcbb05de9d"
+  },
+  {
+    "url": "https://www.calculator.net/calorie-calculator.html",
+    "status": 200,
+    "inline_scripts": 3,
+    "external_scripts": [
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/common.js",
+      "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ],
+    "sha256": "8463a647e30d7ca1ff6cb7caf89e3d12b7186ab632d5f33713b5991db9716259"
+  },
+  {
+    "url": "https://www.calculator.net/body-fat-calculator.html",
+    "status": 200,
+    "inline_scripts": 3,
+    "external_scripts": [
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/common.js",
+      "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ],
+    "sha256": "bd9162c1843c0dd52556089d85c5484b2cdf1edc1a73f1e63b1dbf1a344237e7"
+  },
+  {
+    "url": "https://www.calculator.net/bmr-calculator.html",
+    "status": 200,
+    "inline_scripts": 3,
+    "external_scripts": [
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/common.js",
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/quick-conversion.js",
+      "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ],
+    "sha256": "0c4f0682d997c29671f153ad833ac1de596083de8c2e0465e6845b36acc8581a"
+  },
+  {
+    "url": "https://www.calculator.net/ideal-weight-calculator.html",
+    "status": 200,
+    "inline_scripts": 3,
+    "external_scripts": [
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/common.js",
+      "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ],
+    "sha256": "e67674213d209494ef336f6862321f4f9f87f992ae82ecf318099bbf51453892"
+  },
+  {
+    "url": "https://www.calculator.net/pace-calculator.html",
+    "status": 200,
+    "inline_scripts": 3,
+    "external_scripts": [
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/common.js",
+      "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ],
+    "sha256": "bd4e9aa6c7831f25c46a332d148050199d7d8a6572d5a10b94304d204d7087f5"
+  },
+  {
+    "url": "https://www.calculator.net/army-body-fat-calculator.html",
+    "status": 200,
+    "inline_scripts": 2,
+    "external_scripts": [
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/common.js",
+      "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ],
+    "sha256": "949e608f5741ffe99a650f7f11acf7fc496c38037b38c038c177571ee45cbf24"
+  },
+  {
+    "url": "https://www.calculator.net/lean-body-mass-calculator.html",
+    "status": 200,
+    "inline_scripts": 3,
+    "external_scripts": [
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/common.js",
+      "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ],
+    "sha256": "08797fce9157756ece3b7ba153ee96151ddf654ccfd21f543ec521af3b6d4f1f"
+  },
+  {
+    "url": "https://www.calculator.net/healthy-weight-calculator.html",
+    "status": 200,
+    "inline_scripts": 4,
+    "external_scripts": [
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/common.js",
+      "https://securepubads.g.doubleclick.net/tag/js/gpt.js",
+      "https://www.googletagmanager.com/gtag/js?id=G-762WZF75BL"
+    ],
+    "sha256": "81e7cba6b1e5d3904790384e82c5eb862f53d5227d9a0260d566f164e1285afa"
+  },
+  {
+    "url": "https://www.calculator.net/calories-burned-calculator.html",
+    "status": 200,
+    "inline_scripts": 4,
+    "external_scripts": [
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/common.js",
+      "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ],
+    "sha256": "8ec1121544e4399b5e952f7a8eb0c2c1ebef53dad37f21fe9d42752b328d71ad"
+  },
+  {
+    "url": "https://www.calculator.net/one-rep-max-calculator.html",
+    "status": 200,
+    "inline_scripts": 3,
+    "external_scripts": [
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/common.js",
+      "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ],
+    "sha256": "efd2ed399a02c46a06fbd205216ea017624bbce442ccc23f577c75c8fe4dfc68"
+  },
+  {
+    "url": "https://www.calculator.net/target-heart-rate-calculator.html",
+    "status": 200,
+    "inline_scripts": 3,
+    "external_scripts": [
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/common.js",
+      "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ],
+    "sha256": "30e149a49c6db4e1993df35e1921120feb346391f0207771a3b4210c21913536"
+  },
+  {
+    "url": "https://www.calculator.net/pregnancy-calculator.html",
+    "status": 200,
+    "inline_scripts": 8,
+    "external_scripts": [
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/common.js",
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/calendardateinput.js",
+      "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ],
+    "sha256": "5cef3b6d5e046a3f3debbf95faee7e1dc3d9c479b804ee29eac4438435e1192e"
+  },
+  {
+    "url": "https://www.calculator.net/pregnancy-weight-gain-calculator.html",
+    "status": 200,
+    "inline_scripts": 3,
+    "external_scripts": [
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/common.js",
+      "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ],
+    "sha256": "a1b51f29de6f9508df20dacac171ff1e5c23c47ab88603a9a24d1ffd64dc726a"
+  },
+  {
+    "url": "https://www.calculator.net/pregnancy-conception-calculator.html",
+    "status": 200,
+    "inline_scripts": 6,
+    "external_scripts": [
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/common.js",
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/calendardateinput.js",
+      "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ],
+    "sha256": "44f49308068f29cfbea2e12c5e96d6022fc2ae0d3e51c86f941337099652b0b2"
+  },
+  {
+    "url": "https://www.calculator.net/due-date-calculator.html",
+    "status": 200,
+    "inline_scripts": 7,
+    "external_scripts": [
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/common.js",
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/calendardateinput.js",
+      "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ],
+    "sha256": "0fe74a554a420353f6bcca57b6bab1326e82a186022fe8de28fb7ee367c5b877"
+  },
+  {
+    "url": "https://www.calculator.net/ovulation-calculator.html",
+    "status": 200,
+    "inline_scripts": 3,
+    "external_scripts": [
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/common.js",
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/calendardateinput.js",
+      "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ],
+    "sha256": "4a2027c94555d73c062d79d5ea1da93c7632fa9142c2d1eaec865b9921578b1f"
+  },
+  {
+    "url": "https://www.calculator.net/conception-calculator.html",
+    "status": 200,
+    "inline_scripts": 3,
+    "external_scripts": [
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/common.js",
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/calendardateinput.js",
+      "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ],
+    "sha256": "f1264e53dce4f18598ef836b78c738e9d01385a67974a314bedd61fecc3457fa"
+  },
+  {
+    "url": "https://www.calculator.net/period-calculator.html",
+    "status": 200,
+    "inline_scripts": 3,
+    "external_scripts": [
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/common.js",
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/calendardateinput.js",
+      "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ],
+    "sha256": "6a5878b7a61e4b5a000d67b775c68ccf952fbf639c003910d68fc1e6164b7a5f"
+  },
+  {
+    "url": "https://www.calculator.net/macro-calculator.html",
+    "status": 200,
+    "inline_scripts": 3,
+    "external_scripts": [
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/common.js",
+      "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ],
+    "sha256": "a771f9eb9fa787ba42289bbbe6ae774140ea11c5a345694e2e34f34a9c2e08ac"
+  },
+  {
+    "url": "https://www.calculator.net/carbohydrate-calculator.html",
+    "status": 200,
+    "inline_scripts": 3,
+    "external_scripts": [
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/common.js",
+      "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ],
+    "sha256": "c971395539127e9009b461c7771e2e389d3c6c39899444cdb28dde8dba59a830"
+  },
+  {
+    "url": "https://www.calculator.net/protein-calculator.html",
+    "status": 200,
+    "inline_scripts": 3,
+    "external_scripts": [
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/common.js",
+      "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ],
+    "sha256": "54e3613718e5eee6f419cb3c925fcb2b5969c096a362eee767d0c2a2c719958e"
+  },
+  {
+    "url": "https://www.calculator.net/fat-intake-calculator.html",
+    "status": 200,
+    "inline_scripts": 3,
+    "external_scripts": [
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/common.js",
+      "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ],
+    "sha256": "69833634c3a0be78130da4431f333be31251edac170fe050e78baa300fea8372"
+  },
+  {
+    "url": "https://www.calculator.net/tdee-calculator.html",
+    "status": 200,
+    "inline_scripts": 3,
+    "external_scripts": [
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/common.js",
+      "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ],
+    "sha256": "a07eb6304c17461f1a570aa6594919e34f61695cfdee07a6818b314c0551abc7"
+  },
+  {
+    "url": "https://www.calculator.net/gfr-calculator.html",
+    "status": 200,
+    "inline_scripts": 2,
+    "external_scripts": [
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/common.js",
+      "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ],
+    "sha256": "3026236ab4cce57ecefb607389efbcf468d2a006835d53416fb37e4f28a6e2a3"
+  },
+  {
+    "url": "https://www.calculator.net/body-type-calculator.html",
+    "status": 200,
+    "inline_scripts": 2,
+    "external_scripts": [
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/common.js",
+      "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ],
+    "sha256": "0de17c7e7171ed264e5d76cc91670f0095ec1e4cc07e4b7afe80fc35ff446a25"
+  },
+  {
+    "url": "https://www.calculator.net/body-surface-area-calculator.html",
+    "status": 200,
+    "inline_scripts": 2,
+    "external_scripts": [
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/common.js",
+      "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ],
+    "sha256": "a8bc97ac9474025e8b873389619896b6c3c599e10029fe065a852a7d281038b3"
+  },
+  {
+    "url": "https://www.calculator.net/bac-calculator.html",
+    "status": 200,
+    "inline_scripts": 2,
+    "external_scripts": [
+      "https://d26tpo4cm8sb6k.cloudfront.net/js/common.js",
+      "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ],
+    "sha256": "fbf7c0fdc48e69565325c6a6b75e828cfce6322411e28abcff96290cdcedfc12"
+  }
+]

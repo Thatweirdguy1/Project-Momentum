@@ -1,0 +1,352 @@
+{
+  "release": "v0.1.0-research",
+  "generated_date": "2026-11-16",
+  "note": "Checksums cover Git-staged LF-normalized files; manifest excludes itself. Private source memorandum, raw captures and INDB rows excluded.",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 44,
+      "sha256": "b03bf1c11c57b7875b5180518c6b6e984da02f3b4d0e08de65b715c62a44c0e2"
+    },
+    {
+      "path": ".github/workflows/validate.yml",
+      "bytes": 468,
+      "sha256": "4203dfaa121a558427cf2d1b446a2891f3bb17f5a0db92108994d5880585ec58"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 426,
+      "sha256": "3545c2936f904c5e9a67ecf141dbfbdaa8d55e7c36c01b5b05d8a62b18db5d6b"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 1085,
+      "sha256": "be376319529374d284f0a51f91f91efe3e0a4c2309c81b9160f9a3ddbd5632b5"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5652,
+      "sha256": "255da42cd2ede1e61980696abcfac8ccc2db8d10140a591a96b85b02d3bb9174"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 1473,
+      "sha256": "7d87ad859bc40fa5728815a2a796ba2407dc75b2eb25cb1d32f68c6c87ebff23"
+    },
+    {
+      "path": "data/exercises/exercises.json",
+      "bytes": 16438594,
+      "sha256": "22fd31c597cededbaa98f9a2f4accb455f7838c099df5f5f2efee2c4f1ab5233"
+    },
+    {
+      "path": "data/exercises/public-directory.json",
+      "bytes": 282058,
+      "sha256": "346e0febcd016a4467cf6be47a1747238fe33447798f5582cd18c9a656e1eba4"
+    },
+    {
+      "path": "data/exercises/summary.json",
+      "bytes": 612,
+      "sha256": "6309ed25172e34eccae7b7e77d8fb620da5b6b6057bdc7c973ff59e295eafa2b"
+    },
+    {
+      "path": "data/exercises/upstream-LICENSE",
+      "bytes": 1993,
+      "sha256": "99230e0c2e74c54386e31e7282fc4d939ca14942df542b706fcd9fa71c3187fa"
+    },
+    {
+      "path": "data/exercises/upstream-NOTICE.md",
+      "bytes": 1595,
+      "sha256": "2b078c9ff73670bbcd4503703eb6be624250193b33655948799acc635a11557b"
+    },
+    {
+      "path": "data/nutrition/WHO_SOURCES.md",
+      "bytes": 747,
+      "sha256": "721f29963f1e0d29f84d955f4c7ecfa8d98ef1aac7ba5d8ff583eaff6baad328"
+    },
+    {
+      "path": "data/nutrition/downloads.json",
+      "bytes": 1508,
+      "sha256": "74d2a74891989903cf80cf3cb12e7a72abef9c2dca6a5664794f827614a84bbb"
+    },
+    {
+      "path": "data/nutrition/quality-issues.json",
+      "bytes": 2411,
+      "sha256": "e3e9f8d21f61820ee8c91af0b54562060fc7b1ca62f79197b51c8956123f104a"
+    },
+    {
+      "path": "data/nutrition/summary.json",
+      "bytes": 699,
+      "sha256": "7cdb245e21501ab17225da77fc08abadc4c249a515f869238014fb41767d08be"
+    },
+    {
+      "path": "data/nutrition/usda_macros.csv",
+      "bytes": 3056249,
+      "sha256": "aacc49195322b220197a43d320ad15e70096faa60e065fdf8f21ab37d33755bd"
+    },
+    {
+      "path": "data/nutrition/usda_nutrients.csv.gz",
+      "bytes": 5374921,
+      "sha256": "ce6f204977eb235e67e147c68c876a8b159873d0dd815f5b9811010a5e9ae08b"
+    },
+    {
+      "path": "design/DESIGN.md",
+      "bytes": 12284,
+      "sha256": "84235faa9011cf26095b941aa11b0a65f767838dec4f1761943c5b68222c4975"
+    },
+    {
+      "path": "design/index.html",
+      "bytes": 3597,
+      "sha256": "cb97fc171d9abf55f7de87df987becdaee6285b57eae52dbd4c3d6bb4b23c902"
+    },
+    {
+      "path": "design/ios/meal-review.html",
+      "bytes": 21757,
+      "sha256": "ce71714208d89c131764a6339c0eb3615c44119073e99a88d73638f79c9ad32a"
+    },
+    {
+      "path": "design/ios/recovery.html",
+      "bytes": 18818,
+      "sha256": "63df6b3f042cffc125a41202ff67dea61980d11cf388540739bebc3310e35739"
+    },
+    {
+      "path": "design/ios/today.html",
+      "bytes": 18048,
+      "sha256": "af673f7e12c15b64347f2ca501761273b0220125a7bbcf1da7ab93d389d370cc"
+    },
+    {
+      "path": "design/ios/workout.html",
+      "bytes": 26222,
+      "sha256": "de17be38e11a07d439e1fce7122c598598331a1ce2304ee92d484bd25f72ab61"
+    },
+    {
+      "path": "design/screens.json",
+      "bytes": 2476,
+      "sha256": "d82ebb97f5a23bec3f5cd78ab9254e944dbe4a15bdcdad63b9b2e2c98e1ec468"
+    },
+    {
+      "path": "design/screenshots/ios-meal-review.png",
+      "bytes": 90609,
+      "sha256": "6f2bf1f9139ff3d14e8d8a79e66c6d0d301e424741a6b412cfee8c1c49dd2ab9"
+    },
+    {
+      "path": "design/screenshots/ios-recovery.png",
+      "bytes": 107207,
+      "sha256": "92f0fef58937bd04fe4c863e922fe5ea007b12fbc07cefeb437897ab63b3e6b0"
+    },
+    {
+      "path": "design/screenshots/ios-today.png",
+      "bytes": 76250,
+      "sha256": "37c7570bfd86284fda85e5d04be590becf12b1c961cf000c8eef0369744dc372"
+    },
+    {
+      "path": "design/screenshots/ios-workout.png",
+      "bytes": 73243,
+      "sha256": "faf441654459dad5ea26270608128aa4ce8ed9cee32388cc0c608fb857472d15"
+    },
+    {
+      "path": "design/screenshots/local-calculators.png",
+      "bytes": 92783,
+      "sha256": "f3f39c799e1b0ecb7506693de91a22f4fc0228c0025f668958de40308533aa08"
+    },
+    {
+      "path": "design/screenshots/local-exercises.png",
+      "bytes": 220413,
+      "sha256": "239d31464f7929900418aceab72a58aa6555353c1c2da382ee71f6af3d032906"
+    },
+    {
+      "path": "design/screenshots/local-foods.png",
+      "bytes": 599020,
+      "sha256": "1aad15d029772e1e00b8144734883981eb10d8573580cf8d5482ebc6ccd2022b"
+    },
+    {
+      "path": "design/screenshots/local-mobile.png",
+      "bytes": 66681,
+      "sha256": "8bacc941821738004d7e1187cea066863b39015586a8047556b5b66e2227c507"
+    },
+    {
+      "path": "design/screenshots/web-food.png",
+      "bytes": 284462,
+      "sha256": "bdcc5253555294afacb7bb6fcf1c90657d3258554aa3b346a491d9890addc311"
+    },
+    {
+      "path": "design/screenshots/web-plan.png",
+      "bytes": 228418,
+      "sha256": "0019d4aa75419551988a3af148dac2e0a6a9f25b9ed2bd3df67426baafdd5261"
+    },
+    {
+      "path": "design/screenshots/web-progress.png",
+      "bytes": 286400,
+      "sha256": "616bb01e064cc852afeb0ce75d78210201d9ff8c3d9531504a26b0683759e70e"
+    },
+    {
+      "path": "design/screenshots/web-settings.png",
+      "bytes": 300093,
+      "sha256": "6a90b718b7baa28d40ba78e594e6ca186bf97ee0a2826c282f9fc1d428be3380"
+    },
+    {
+      "path": "design/screenshots/web-today.png",
+      "bytes": 213800,
+      "sha256": "380271e26c9c209dfd88d42e0122a84cb5cbafde585912aad5f44976652dba5b"
+    },
+    {
+      "path": "design/screenshots/web-training.png",
+      "bytes": 268464,
+      "sha256": "dc497de8cc4550d9359053e4b9130f8bb6eebe6e6a93b465fe31c994bfe4a9df"
+    },
+    {
+      "path": "design/web/food.html",
+      "bytes": 35380,
+      "sha256": "958a73ae831e1c1f647b1f3958bf72bf3762057b102f4b2f25ffe2a735e79c45"
+    },
+    {
+      "path": "design/web/plan.html",
+      "bytes": 37712,
+      "sha256": "a8f1beb2db0cf639dcc6ba8b475ce1b384cab8a620d78fda0eea029cf68b7e3b"
+    },
+    {
+      "path": "design/web/progress.html",
+      "bytes": 42434,
+      "sha256": "98f72132a992140b047e5de7a06d346078b73000b4a6a7ed1cc4d153a1faeb3d"
+    },
+    {
+      "path": "design/web/settings.html",
+      "bytes": 36964,
+      "sha256": "02e56545dbb88389cc6862fb6b902fe39b95f6974f700d0040b19085a57853ec"
+    },
+    {
+      "path": "design/web/today.html",
+      "bytes": 31199,
+      "sha256": "cb145db45b00553ca4e1db7873270146ada48661268ee2e7f1b840b13d815c75"
+    },
+    {
+      "path": "design/web/training.html",
+      "bytes": 42145,
+      "sha256": "a5bef9105087dc930ac8f01846c3561cbff482c6492ce9de594f6e12d40b0af9"
+    },
+    {
+      "path": "docs/CALCULATORS.md",
+      "bytes": 5851,
+      "sha256": "c17385844b20eff8994cca1131b2c6c6667d4c02f30f020bc8c731f246497e77"
+    },
+    {
+      "path": "docs/EXERCISE_DATA.md",
+      "bytes": 2860,
+      "sha256": "b5f96da3616b12ee4081676a31dc04128143a5f1677abed4a62f2bcf3daae399"
+    },
+    {
+      "path": "docs/KNOWN_LIMITATIONS.md",
+      "bytes": 2552,
+      "sha256": "c1dc5fe0524e012d9e0c889625e6d466cffd3a51d6bfb03c8e2a2dd7318272cf"
+    },
+    {
+      "path": "docs/NUTRITION_DATA.md",
+      "bytes": 4334,
+      "sha256": "26df314699278c1e24e2e2414163be21557124953542c7d3aca23f251af6b830"
+    },
+    {
+      "path": "docs/REQUIREMENTS.md",
+      "bytes": 4833,
+      "sha256": "f580c9e05b5b3a4c7933be316d8a61dbf354968d0ed592762ef137e079da0bf2"
+    },
+    {
+      "path": "docs/RESEARCH.md",
+      "bytes": 5903,
+      "sha256": "dd059fb7b41bb325a834661a531403b147d95d613cbca445aa7355b509caf252"
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "bytes": 2688,
+      "sha256": "ce9fad94459e90d757199b7bb4ebb3e336dee6b328f9bb28784f6b80c21cbdb9"
+    },
+    {
+      "path": "requirements-data.txt",
+      "bytes": 44,
+      "sha256": "e99a6ff9134837ce887bd571389cce1062c7925f5bd491aebf4c7b2b1c881a0c"
+    },
+    {
+      "path": "research/calculator-script-inventory.json",
+      "bytes": 10527,
+      "sha256": "ba3e77d75ba40dc6aa500f7a07529c963b88d339faef012ba7837c219b56815d"
+    },
+    {
+      "path": "research/media-inventory.json",
+      "bytes": 1427,
+      "sha256": "a26537fed76809a19eee398398f5d3f59bff6cea7b906f3504b0c18df9e925b3"
+    },
+    {
+      "path": "research/rea-calculator-summary.json",
+      "bytes": 878,
+      "sha256": "06561f08baf6667def9e252a33e45ae840343d72fc466a51c6b70591aad3df40"
+    },
+    {
+      "path": "scripts/build_gallery.py",
+      "bytes": 2027,
+      "sha256": "8c1402d65f635c8e55c5a080ef276878c957041d3c810575ceee0d94336149ba"
+    },
+    {
+      "path": "scripts/collect_exercises.py",
+      "bytes": 5858,
+      "sha256": "08774166407a7945832ccafae185d5932ad9ee6e3596baed5fa566529e2adc63"
+    },
+    {
+      "path": "scripts/download_nutrition.py",
+      "bytes": 1850,
+      "sha256": "8ffa3b9c640a1bc6812bbd2ad7dc38e9d2d17328f8b87fb0ff8526c62a0a5a7e"
+    },
+    {
+      "path": "scripts/inspect_calculator_assets.py",
+      "bytes": 2158,
+      "sha256": "68ae3eff90b5081b2c406e668dde71c4735d171efcffb736a1365c6f421f6ad1"
+    },
+    {
+      "path": "scripts/normalize_nutrition.py",
+      "bytes": 7200,
+      "sha256": "a216f29730ca9e41988f71d26d776b92379670b51ea564de71e1c52be5b72879"
+    },
+    {
+      "path": "scripts/package_research.py",
+      "bytes": 1845,
+      "sha256": "006ba946672799302dde3bee65b318467d4891a2245275b403832bcbf9cd8e43"
+    },
+    {
+      "path": "scripts/review_designs.py",
+      "bytes": 6841,
+      "sha256": "d3fb5b838adc9ebdd0e396f0bbd1047793e0bb4bef4e5094a68d6286b24ab017"
+    },
+    {
+      "path": "scripts/validate_artifacts.py",
+      "bytes": 1805,
+      "sha256": "999001e6c03e1fd6d80721f1c96277efb188365559a4c7b1a61261e7fabff064"
+    },
+    {
+      "path": "web/app.mjs",
+      "bytes": 6298,
+      "sha256": "424d006c39a06cdf79fe57d9520e799a67948da5c66bbeb6100d22470f8ff4b3"
+    },
+    {
+      "path": "web/calculators/catalog.mjs",
+      "bytes": 3746,
+      "sha256": "0f19b9775d3153bcd349281459f17f22319aaa4d73392fa8d6e36782e5832761"
+    },
+    {
+      "path": "web/calculators/engine.mjs",
+      "bytes": 12821,
+      "sha256": "efa12bbac67fa4992f38381a0cc494e7d890a9de16d22ab1c7457a764fced6a6"
+    },
+    {
+      "path": "web/calculators/engine.test.mjs",
+      "bytes": 2565,
+      "sha256": "74770e22140caccf54c9ec65a77c283825cccf9499ab4c62b1d66763055d5139"
+    },
+    {
+      "path": "web/index.html",
+      "bytes": 4399,
+      "sha256": "962453eb1846284d39f2de716f1a6496a1cd534340e96631bf80b41dc1a8514f"
+    },
+    {
+      "path": "web/style.css",
+      "bytes": 4075,
+      "sha256": "1b729864aa9f8dd2347da9e31c8f1cc4e54754b2f89881aed433a7eb4e5a1b75"
+    }
+  ]
+}

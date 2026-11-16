@@ -1,0 +1,42 @@
+[
+  {
+    "requested_url": "https://www.myfitnesspal.com/",
+    "http_status": 200,
+    "collected_date": "2026-11-16",
+    "method": "Scrapling bulk_get; public HTML only",
+    "media_references": [],
+    "coverage": "Elements exposed in this response only; no in-app catalog or video download"
+  },
+  {
+    "requested_url": "https://www.motraapp.com/",
+    "http_status": 200,
+    "collected_date": "2026-11-16",
+    "method": "Scrapling bulk_get; public HTML only",
+    "media_references": [
+      {
+        "element": "video",
+        "attribute": "poster",
+        "url": "https://www.motraapp.com/videos/motra-hero-poster-v2.jpg",
+        "downloaded": false,
+        "license": "not established"
+      }
+    ],
+    "coverage": "Elements exposed in this response only; no in-app catalog or video download"
+  },
+  {
+    "requested_url": "https://macrofactor.com/macrofactor/",
+    "http_status": 200,
+    "collected_date": "2026-11-16",
+    "method": "Scrapling bulk_get; public HTML only",
+    "media_references": [],
+    "coverage": "Elements exposed in this response only; no in-app catalog or video download"
+  },
+  {
+    "requested_url": "https://macrofactor.com/workouts/",
+    "http_status": 200,
+    "collected_date": "2026-11-16",
+    "method": "Scrapling bulk_get; public HTML only",
+    "media_references": [],
+    "coverage": "Elements exposed in this response only; no in-app catalog or video download"
+  }
+]

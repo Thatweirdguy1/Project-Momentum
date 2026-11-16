@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Momentum — Progress &amp; Non-Linear Trends</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#2e3544",
+            "on-background": "#dce2f6",
+            "on-error-container": "#ffdad6",
+            "surface-container": "#19202e",
+            "surface-bright": "#323949",
+            "secondary": "#f5bc7e",
+            "on-tertiary": "#233143",
+            "on-surface": "#dce2f6",
+            "surface": "#0c1321",
+            "on-primary-container": "#005a4d",
+            "on-secondary": "#482900",
+            "on-primary": "#00382f",
+            "surface-container-high": "#232a39",
+            "outline": "#86948f",
+            "primary-fixed": "#7af8de",
+            "on-surface-variant": "#bbcac5",
+            "tertiary": "#d0dff5",
+            "secondary-container": "#67400d",
+            "on-primary-fixed": "#00201b",
+            "tertiary-container": "#b4c3d9",
+            "on-secondary-fixed": "#2b1700",
+            "primary-container": "#55d6be",
+            "primary": "#75f3da",
+            "error": "#ffb4ab",
+            "tertiary-fixed-dim": "#b9c8de",
+            "on-secondary-fixed-variant": "#653e0b",
+            "on-secondary-container": "#e5ae71",
+            "secondary-fixed": "#ffddbb",
+            "primary-fixed-dim": "#5bdbc3",
+            "inverse-surface": "#dce2f6",
+            "error-container": "#93000a",
+            "surface-dim": "#0c1321",
+            "surface-variant": "#2e3544",
+            "surface-container-lowest": "#070e1c",
+            "on-primary-fixed-variant": "#005045",
+            "secondary-fixed-dim": "#f5bc7e",
+            "on-tertiary-fixed-variant": "#39485a",
+            "inverse-on-surface": "#2a3040",
+            "on-tertiary-container": "#425063",
+            "outline-variant": "#3c4946",
+            "background": "#0c1321",
+            "on-tertiary-fixed": "#0d1c2d",
+            "tertiary-fixed": "#d4e4fa",
+            "inverse-primary": "#006b5c",
+            "surface-tint": "#5bdbc3",
+            "on-error": "#690005",
+            "surface-container-low": "#151b2a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "space-md": "1rem",
+            "margin-desktop": "2rem",
+            "gutter": "1.25rem",
+            "space-xl": "2.5rem",
+            "space-sm": "0.5rem",
+            "gutter-desktop": "1.5rem",
+            "margin": "1.5rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "label-sm": ["Space Grotesk"],
+            "label-lg": ["Space Grotesk"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Space Grotesk"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Space Grotesk"],
+            "headline-sm": ["Space Grotesk"],
+            "display-lg": ["Space Grotesk"],
+            "numeric-metric": ["Space Grotesk"],
+            "numeric-data": ["Space Grotesk"],
+            "headline-lg": ["Space Grotesk"],
+            "body-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "500" }],
+            "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "numeric-metric": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "numeric-data": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container flex">
+<!-- LEFT SIDEBAR: Shared Component SideNavBar (Active: Progress) -->
+<aside class="fixed top-0 left-0 h-full w-64 flex flex-col justify-between p-4 z-40 bg-surface-container-low border-r border-outline-variant">
+<div class="flex flex-col gap-6">
+<!-- Header / Logo -->
+<div class="flex items-center gap-3 px-2 pt-1">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high border border-outline-variant flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]" data-icon="pulse">vital_signs</span>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg font-bold text-primary tracking-tight">Momentum</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant leading-none">Adaptive Conditioning</div>
+</div>
+</div>
+<!-- Energy CTA Button -->
+<button class="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-primary-container text-on-primary-container font-label-lg text-label-lg font-semibold hover:bg-primary transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px]" data-icon="bolt">bolt</span>
+        Log Energy State
+      </button>
+<!-- Main Navigation Links -->
+<nav class="flex flex-col gap-1">
+<!-- Today -->
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors duration-150 font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="calendar_today">calendar_today</span>
+          Today
+        </a>
+<!-- Plan -->
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors duration-150 font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="event_note">event_note</span>
+          Plan
+        </a>
+<!-- Train -->
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors duration-150 font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="fitness_center">fitness_center</span>
+          Train
+        </a>
+<!-- Food -->
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors duration-150 font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="restaurant">restaurant</span>
+          Food
+        </a>
+<!-- Progress (ACTIVE ITEM) -->
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg bg-surface-container-high text-primary font-medium border-l-2 border-primary font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="insights" data-weight="fill" style="font-variation-settings: 'FILL' 1;">insights</span>
+          Progress
+        </a>
+<!-- Settings -->
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors duration-150 font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+          Settings
+        </a>
+</nav>
+</div>
+<!-- Footer Utility Links -->
+<div class="flex flex-col gap-1 border-t border-outline-variant pt-3">
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors duration-150 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="cloud_done">cloud_done</span>
+        Sync Center
+      </a>
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors duration-150 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="spa">spa</span>
+        Help &amp; Calm
+      </a>
+</div>
+</aside>
+<!-- MAIN WRAPPER: Shifted by 256px (w-64) -->
+<div class="flex-1 ml-64 flex flex-col min-h-screen bg-background">
+<!-- TOP NAVIGATION: Shared Component TopNavBar -->
+<header class="flex justify-between items-center w-full px-6 py-2.5 h-16 border-b border-outline-variant bg-surface-container-low sticky top-0 z-30">
+<!-- Left side: Search & Demo indicator badge -->
+<div class="flex items-center gap-4">
+<div class="relative w-72">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]" data-icon="search">search</span>
+<input class="w-full bg-surface-container text-on-surface placeholder-on-surface-variant text-body-sm font-body-sm pl-9 pr-3 py-1.5 rounded-lg border border-outline-variant focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="Search trend markers, logs, lifts..." type="text"/>
+</div>
+<!-- Synthetic data badge required by screen spec -->
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-secondary-container/30 border border-secondary/40 text-secondary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+          DESIGN DEMO • SYNTHETIC DATA
+        </div>
+</div>
+<!-- Trailing Action items -->
+<div class="flex items-center gap-3">
+<!-- Capacity pill from JSON: trailing_secondary_action -->
+<div class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-surface-container-high border border-outline-variant text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="battery_horiz_075">battery_horiz_075</span>
+          Capacity: Normal
+        </div>
+<!-- Trailing Primary Action: Quick Log -->
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-fixed-dim transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+          Quick Log
+        </button>
+<!-- Icon actions from JSON: sync, tune, account_circle -->
+<div class="flex items-center gap-1 border-l border-outline-variant pl-3 ml-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" title="Sync">
+<span class="material-symbols-outlined text-[20px]" data-icon="sync">sync</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" title="Settings filter">
+<span class="material-symbols-outlined text-[20px]" data-icon="tune">tune</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" title="Account">
+<span class="material-symbols-outlined text-[22px]" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- MAIN DATA CANVAS -->
+<main class="flex-1 p-8 max-w-[1440px] w-full mx-auto space-y-6">
+<!-- SECTION 1: Header Card (Longitudinal Trends & Real Momentum) -->
+<section class="bg-surface-container border border-outline-variant rounded-xl p-6 relative overflow-hidden">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+<div class="space-y-2 max-w-3xl">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-primary bg-primary/10 border border-primary/20 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]" data-icon="auto_graph">auto_graph</span>
+                HONEST OBSERVABILITY
+              </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">• Neuro-Inclusive Metric Design</span>
+</div>
+<h1 class="text-headline-lg font-headline-lg text-on-surface tracking-tight">
+              Longitudinal Trends &amp; Real Momentum
+            </h1>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              Progress is cumulative, not consecutive. Gaps in logging represent real life, not failure. No broken streak penalties, no red guilt markers.
+            </p>
+</div>
+<!-- Time Range Selector -->
+<div class="flex items-center gap-1.5 bg-surface-container-low p-1.5 rounded-lg border border-outline-variant self-start lg:self-center">
+<button class="px-3 py-1.5 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors">
+              Last 4 Weeks
+            </button>
+<button class="px-3.5 py-1.5 rounded font-label-md text-label-md bg-surface-container-high border border-outline text-primary font-semibold transition-all">
+              8 Weeks
+            </button>
+<button class="px-3 py-1.5 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors">
+              3 Months
+            </button>
+<button class="px-3 py-1.5 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors">
+              Year
+            </button>
+</div>
+</div>
+<!-- Metric High-level Callout Strip -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6 pt-6 border-t border-outline-variant">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high border border-outline-variant flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]" data-icon="all_inclusive">all_inclusive</span>
+</div>
+<div>
+<div class="text-numeric-data font-numeric-data text-on-surface font-semibold">Continuous Total</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant">19 Completed Sessions</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high border border-outline-variant flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]" data-icon="pace">pace</span>
+</div>
+<div>
+<div class="text-numeric-data font-numeric-data text-on-surface font-semibold">Average Cadence</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant">2.4 / week (Target: 2-3)</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high border border-outline-variant flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[22px]" data-icon="shield">shield</span>
+</div>
+<div>
+<div class="text-numeric-data font-numeric-data text-on-surface font-semibold">Zero-Punishment Rate</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant">No streak penalties</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: Consistency & Volume Baseline Chart (Honest Missing Data handling) -->
+<section class="bg-surface-container border border-outline-variant rounded-xl p-6 space-y-6">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="text-headline-md font-headline-md text-on-surface">Consistency &amp; Volume Baseline</h2>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant border border-outline-variant font-label-sm text-label-sm">
+                8-Week Observational Window
+              </span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">
+              Evaluating baseline neuromuscular stimulus retention rather than uninterrupted day counts.
+            </p>
+</div>
+<!-- Total Count Display -->
+<div class="bg-surface-container-low px-4 py-2 rounded-lg border border-outline-variant flex items-center gap-3">
+<div>
+<div class="font-numeric-metric text-numeric-metric text-primary leading-none">19</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Completed Sessions</div>
+</div>
+<div class="h-8 w-px bg-outline-variant mx-1"></div>
+<div>
+<div class="font-numeric-data text-numeric-data text-on-surface font-semibold">Avg 2.4 / wk</div>
+<div class="font-body-sm text-body-sm text-secondary font-medium">Sustainable Stimulus</div>
+</div>
+</div>
+</div>
+<!-- Legend -->
+<div class="flex flex-wrap items-center gap-6 py-2 border-y border-outline-variant text-label-sm font-label-sm">
+<div class="flex items-center gap-2">
+<span class="w-3.5 h-3.5 rounded bg-primary-container border border-primary"></span>
+<span class="text-on-surface">Resistance Session (Completed)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3.5 h-3.5 rounded bg-surface-container-highest border border-tertiary/40"></span>
+<span class="text-on-surface-variant">Subdued Active Walk / Mobility</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3.5 h-3.5 rounded bg-surface-container-low border border-dashed border-outline-variant"></span>
+<span class="text-on-surface-variant">No Data Logged (Activity Unknown)</span>
+</div>
+<div class="ml-auto text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px]" data-icon="check_circle">check_circle</span>
+<span>Zero Streak Shame Enforced</span>
+</div>
+</div>
+<!-- 8-Week Visual Matrix Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+<!-- Week 1 -->
+<div class="p-3.5 rounded-lg bg-surface-container-low border border-outline-variant space-y-2">
+<div class="flex justify-between items-center text-label-sm font-label-sm text-on-surface-variant">
+<span>Week 01</span>
+<span class="text-primary font-semibold">3 Sessions</span>
+</div>
+<div class="grid grid-cols-7 gap-1.5">
+<div class="h-8 rounded bg-primary-container/90 border border-primary flex items-center justify-center text-[10px] text-on-primary-container font-bold" title="Mon: Push A">W</div>
+<div class="h-8 rounded bg-surface-container-highest flex items-center justify-center text-[10px] text-on-surface-variant" title="Tue: Active Rest">L</div>
+<div class="h-8 rounded bg-primary-container/90 border border-primary flex items-center justify-center text-[10px] text-on-primary-container font-bold" title="Wed: Pull A">W</div>
+<div class="h-8 rounded bg-surface-container border border-dashed border-outline-variant" title="Thu: Rest"></div>
+<div class="h-8 rounded bg-primary-container/90 border border-primary flex items-center justify-center text-[10px] text-on-primary-container font-bold" title="Fri: Lower A">W</div>
+<div class="h-8 rounded bg-surface-container border border-dashed border-outline-variant" title="Sat: Rest"></div>
+<div class="h-8 rounded bg-surface-container border border-dashed border-outline-variant" title="Sun: Rest"></div>
+</div>
+<div class="text-[11px] text-on-surface-variant/80 font-body-sm pt-1">Target baseline met</div>
+</div>
+<!-- Week 2 -->
+<div class="p-3.5 rounded-lg bg-surface-container-low border border-outline-variant space-y-2">
+<div class="flex justify-between items-center text-label-sm font-label-sm text-on-surface-variant">
+<span>Week 02</span>
+<span class="text-primary font-semibold">2 Sessions</span>
+</div>
+<div class="grid grid-cols-7 gap-1.5">
+<div class="h-8 rounded bg-primary-container/90 border border-primary flex items-center justify-center text-[10px] text-on-primary-container font-bold" title="Mon: Push B">W</div>
+<div class="h-8 rounded bg-surface-container border border-dashed border-outline-variant" title="Tue: Rest"></div>
+<div class="h-8 rounded bg-surface-container border border-dashed border-outline-variant" title="Wed: Rest"></div>
+<div class="h-8 rounded bg-primary-container/90 border border-primary flex items-center justify-center text-[10px] text-on-primary-container font-bold" title="Thu: Pull B">W</div>
+<div class="h-8 rounded bg-surface-container-highest flex items-center justify-center text-[10px] text-on-surface-variant" title="Fri: Walk">L</div>
+<div class="h-8 rounded bg-surface-container-highest flex items-center justify-center text-[10px] text-on-surface-variant" title="Sat: Walk">L</div>
+<div class="h-8 rounded bg-surface-container border border-dashed border-outline-variant" title="Sun: Rest"></div>
+</div>
+<div class="text-[11px] text-on-surface-variant/80 font-body-sm pt-1">Capacity preserved</div>
+</div>
+<!-- Week 3 -->
+<div class="p-3.5 rounded-lg bg-surface-container-low border border-outline-variant space-y-2">
+<div class="flex justify-between items-center text-label-sm font-label-sm text-on-surface-variant">
+<span>Week 03</span>
+<span class="text-primary font-semibold">3 Sessions</span>
+</div>
+<div class="grid grid-cols-7 gap-1.5">
+<div class="h-8 rounded bg-primary-container/90 border border-primary flex items-center justify-center text-[10px] text-on-primary-container font-bold">W</div>
+<div class="h-8 rounded bg-surface-container border border-dashed border-outline-variant"></div>
+<div class="h-8 rounded bg-primary-container/90 border border-primary flex items-center justify-center text-[10px] text-on-primary-container font-bold">W</div>
+<div class="h-8 rounded bg-surface-container-highest flex items-center justify-center text-[10px] text-on-surface-variant">L</div>
+<div class="h-8 rounded bg-surface-container border border-dashed border-outline-variant"></div>
+<div class="h-8 rounded bg-primary-container/90 border border-primary flex items-center justify-center text-[10px] text-on-primary-container font-bold">W</div>
+<div class="h-8 rounded bg-surface-container border border-dashed border-outline-variant"></div>
+</div>
+<div class="text-[11px] text-on-surface-variant/80 font-body-sm pt-1">RDL volume increase</div>
+</div>
+<!-- Week 4 -->
+<div class="p-3.5 rounded-lg bg-surface-container-low border border-outline-variant space-y-2">
+<div class="flex justify-between items-center text-label-sm font-label-sm text-on-surface-variant">
+<span>Week 04</span>
+<span class="text-primary font-semibold">3 Sessions</span>
+</div>
+<div class="grid grid-cols-7 gap-1.5">
+<div class="h-8 rounded bg-primary-container/90 border border-primary flex items-center justify-center text-[10px] text-on-primary-container font-bold">W</div>
+<div class="h-8 rounded bg-surface-container-highest flex items-center justify-center text-[10px] text-on-surface-variant">L</div>
+<div class="h-8 rounded bg-primary-container/90 border border-primary flex items-center justify-center text-[10px] text-on-primary-container font-bold">W</div>
+<div class="h-8 rounded bg-surface-container border border-dashed border-outline-variant"></div>
+<div class="h-8 rounded bg-primary-container/90 border border-primary flex items-center justify-center text-[10px] text-on-primary-container font-bold">W</div>
+<div class="h-8 rounded bg-surface-container border border-dashed border-outline-variant"></div>
+<div class="h-8 rounded bg-surface-container-highest flex items-center justify-center text-[10px] text-on-surface-variant">L</div>
+</div>
+<div class="text-[11px] text-on-surface-variant/80 font-body-sm pt-1">Peak pre-travel block</div>
+</div>
+<!-- Week 5 (CRITICAL: Travel Gap Handled Neutrally) -->
+<div class="p-3.5 rounded-lg bg-surface-container-high border-2 border-secondary/40 space-y-2 relative overflow-hidden">
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-secondary font-semibold">Week 05</span>
+<span class="text-secondary/80 font-label-sm">Life / Travel Gap</span>
+</div>
+<!-- All days neutral -->
+<div class="grid grid-cols-7 gap-1.5">
+<div class="h-8 rounded bg-surface-container border border-dashed border-outline-variant/60"></div>
+<div class="h-8 rounded bg-surface-container border border-dashed border-outline-variant/60"></div>
+<div class="h-8 rounded bg-surface-container border border-dashed border-outline-variant/60"></div>
+<div class="h-8 rounded bg-surface-container border border-dashed border-outline-variant/60"></div>
+<div class="h-8 rounded bg-surface-container border border-dashed border-outline-variant/60"></div>
+<div class="h-8 rounded bg-surface-container border border-dashed border-outline-variant/60"></div>
+<div class="h-8 rounded bg-surface-container-highest/80 flex items-center justify-center text-[10px] text-on-surface-variant">L</div>
+</div>
+<div class="text-[11px] text-secondary font-medium font-body-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="flight">flight</span>
+              Travel gap handled neutrally
+            </div>
+</div>
+<!-- Week 6 -->
+<div class="p-3.5 rounded-lg bg-surface-container-low border border-outline-variant space-y-2">
+<div class="flex justify-between items-center text-label-sm font-label-sm text-on-surface-variant">
+<span>Week 06</span>
+<span class="text-primary font-semibold">2 Sessions</span>
+</div>
+<div class="grid grid-cols-7 gap-1.5">
+<div class="h-8 rounded bg-surface-container border border-dashed border-outline-variant"></div>
+<div class="h-8 rounded bg-primary-container/90 border border-primary flex items-center justify-center text-[10px] text-on-primary-container font-bold">W</div>
+<div class="h-8 rounded bg-surface-container border border-dashed border-outline-variant"></div>
+<div class="h-8 rounded bg-surface-container-highest flex items-center justify-center text-[10px] text-on-surface-variant">L</div>
+<div class="h-8 rounded bg-primary-container/90 border border-primary flex items-center justify-center text-[10px] text-on-primary-container font-bold">W</div>
+<div class="h-8 rounded bg-surface-container border border-dashed border-outline-variant"></div>
+<div class="h-8 rounded bg-surface-container border border-dashed border-outline-variant"></div>
+</div>
+<div class="text-[11px] text-on-surface-variant/80 font-body-sm pt-1">Seamless re-entry</div>
+</div>
+<!-- Week 7 (Deload) -->
+<div class="p-3.5 rounded-lg bg-surface-container-low border border-outline-variant space-y-2">
+<div class="flex justify-between items-center text-label-sm font-label-sm text-on-surface-variant">
+<span>Week 07</span>
+<span class="text-tertiary font-semibold">3 Sessions (Deload)</span>
+</div>
+<div class="grid grid-cols-7 gap-1.5">
+<div class="h-8 rounded bg-surface-container-high border border-outline flex items-center justify-center text-[10px] text-primary">D</div>
+<div class="h-8 rounded bg-surface-container-highest flex items-center justify-center text-[10px] text-on-surface-variant">L</div>
+<div class="h-8 rounded bg-surface-container-high border border-outline flex items-center justify-center text-[10px] text-primary">D</div>
+<div class="h-8 rounded bg-surface-container border border-dashed border-outline-variant"></div>
+<div class="h-8 rounded bg-surface-container-high border border-outline flex items-center justify-center text-[10px] text-primary">D</div>
+<div class="h-8 rounded bg-surface-container border border-dashed border-outline-variant"></div>
+<div class="h-8 rounded bg-surface-container-highest flex items-center justify-center text-[10px] text-on-surface-variant">L</div>
+</div>
+<div class="text-[11px] text-on-surface-variant/80 font-body-sm pt-1">Velocity retained</div>
+</div>
+<!-- Week 8 (Current) -->
+<div class="p-3.5 rounded-lg bg-surface-container-low border border-primary/50 space-y-2">
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-primary font-bold">Week 08 (Current)</span>
+<span class="text-primary font-semibold">3 Sessions</span>
+</div>
+<div class="grid grid-cols-7 gap-1.5">
+<div class="h-8 rounded bg-primary-container/90 border border-primary flex items-center justify-center text-[10px] text-on-primary-container font-bold">W</div>
+<div class="h-8 rounded bg-surface-container-highest flex items-center justify-center text-[10px] text-on-surface-variant">L</div>
+<div class="h-8 rounded bg-primary-container/90 border border-primary flex items-center justify-center text-[10px] text-on-primary-container font-bold">W</div>
+<div class="h-8 rounded bg-surface-container border border-dashed border-outline-variant"></div>
+<div class="h-8 rounded bg-primary-container/90 border border-primary flex items-center justify-center text-[10px] text-on-primary-container font-bold">W</div>
+<div class="h-8 rounded bg-surface-container border border-dashed border-outline-variant"></div>
+<div class="h-8 rounded bg-surface-container-high/40 border border-outline-variant/40 flex items-center justify-center text-[10px] text-on-surface-variant/50">Today</div>
+</div>
+<div class="text-[11px] text-primary font-medium font-body-sm pt-1">New 1RM projected</div>
+</div>
+</div>
+<!-- Explainer Notice: Neutral handling -->
+<div class="flex items-start gap-3 p-3.5 rounded-lg bg-surface-container-low border border-outline-variant">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5" data-icon="lightbulb">lightbulb</span>
+<div class="space-y-0.5">
+<div class="text-label-md font-label-md text-on-surface font-semibold">Neurodivergent Resilience Principle</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+              Week 5 travel gap handled neutrally. Missing observations remain unknown. ADHD executive function fluctuates with contextual demands. Momentum measures your aggregate neuromuscular stimulus over months, without treating missing logs as proof of either training or rest.
+            </p>
+</div>
+</div>
+</section>
+<!-- TWO-COLUMN SECTION: Strength Trajectory + Nutrition Stability -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- SECTION 3: Strength Trajectory & Estimated 1RM (8 Cols) -->
+<section class="lg:col-span-8 bg-surface-container border border-outline-variant rounded-xl p-6 space-y-6">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-headline-md font-headline-md text-on-surface">Strength Trajectory &amp; Estimated 1RM</h3>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary border border-outline-variant font-label-sm text-label-sm">
+                  Submaximal Regression Model
+                </span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                Upward trajectory plotted across 8 weeks. Velocity maintained through deload without zeroing trend.
+              </p>
+</div>
+<!-- Movement Selector Switch -->
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-lg border border-outline-variant">
+<button class="px-3 py-1 rounded bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold border border-primary/40">
+                Romanian Deadlift
+              </button>
+<button class="px-3 py-1 rounded text-on-surface-variant font-label-sm text-label-sm hover:text-on-surface">
+                Lat Pulldown
+              </button>
+</div>
+</div>
+<!-- Metric Summary Ribbon -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-surface-container-low p-3.5 rounded-lg border border-outline-variant">
+<div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Starting 1RM (W1)</div>
+<div class="font-numeric-data text-numeric-data text-on-surface font-semibold">102.5 kg</div>
+</div>
+<div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Current Estimated 1RM</div>
+<div class="font-numeric-data text-numeric-data text-primary font-semibold">117.5 kg <span class="text-label-sm text-primary/80 font-normal">(+15 kg)</span></div>
+</div>
+<div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Deload Week 7 Stimulus</div>
+<div class="font-numeric-data text-numeric-data text-tertiary font-semibold">Active Rest (-35% Vol)</div>
+</div>
+<div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Trend Velocity</div>
+<div class="font-numeric-data text-numeric-data text-secondary font-semibold">+1.8 kg / wk</div>
+</div>
+</div>
+<!-- SVG Chart: Realistic Trend Line with Deload & Unbroken Velocity -->
+<div class="relative w-full h-64 bg-surface-container-low rounded-lg border border-outline-variant p-4 flex flex-col justify-between">
+<!-- Axis lines and markers -->
+<div class="absolute inset-0 p-6 flex flex-col justify-between pointer-events-none opacity-20">
+<div class="w-full border-b border-on-surface-variant border-dashed"></div>
+<div class="w-full border-b border-on-surface-variant border-dashed"></div>
+<div class="w-full border-b border-on-surface-variant border-dashed"></div>
+<div class="w-full border-b border-on-surface-variant border-dashed"></div>
+</div>
+<!-- Deload Shade Zone (Week 7: approx 75% to 87.5% across) -->
+<div class="absolute top-4 bottom-8 left-[74%] width-[13%] w-[13%] bg-tertiary/10 border-x border-tertiary/30 rounded pointer-events-none flex items-start justify-center pt-2">
+<span class="font-label-sm text-[10px] text-tertiary bg-surface-container px-1 py-0.5 rounded border border-tertiary/30">DELOAD</span>
+</div>
+<!-- Travel Gap Zone (Week 5: approx 50% to 62.5% across) -->
+<div class="absolute top-4 bottom-8 left-[49%] width-[13%] w-[13%] bg-surface-container-highest/20 border-x border-dashed border-outline-variant pointer-events-none flex items-start justify-center pt-2">
+<span class="font-label-sm text-[10px] text-on-surface-variant bg-surface-container px-1 py-0.5 rounded border border-outline-variant">LIFE GAP</span>
+</div>
+<!-- SVG Curves -->
+<svg class="w-full h-full overflow-visible z-10" preserveaspectratio="none" viewbox="0 0 700 200">
+<defs>
+<lineargradient id="primaryGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#75f3da" stop-opacity="0.35"></stop>
+<stop offset="100%" stop-color="#75f3da" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Filled area below trajectory -->
+<path d="M 20,160 Q 110,145 200,130 T 360,110 T 450,110 T 540,118 T 680,60 L 680,195 L 20,195 Z" fill="url(#primaryGrad)"></path>
+<!-- The Trajectory Line (Teal) -->
+<path d="M 20,160 Q 110,145 200,130 T 360,110 T 450,110 T 540,118 T 680,60" fill="none" stroke="#75f3da" stroke-linecap="round" stroke-width="3"></path>
+<!-- Lat pulldown secondary reference line (Subdued) -->
+<path d="M 20,175 Q 110,168 200,152 T 360,140 T 450,140 T 540,145 T 680,105" fill="none" stroke="#86948f" stroke-dasharray="4,4" stroke-width="2"></path>
+<!-- Plotted Data Points -->
+<circle class="cursor-pointer" cx="20" cy="160" fill="#75f3da" r="4.5"></circle>
+<circle class="cursor-pointer" cx="110" cy="145" fill="#75f3da" r="4.5"></circle>
+<circle class="cursor-pointer" cx="200" cy="130" fill="#75f3da" r="4.5"></circle>
+<circle class="cursor-pointer" cx="360" cy="110" fill="#75f3da" r="4.5"></circle>
+<!-- Week 5 life gap: Hollow point showing continuity -->
+<circle cx="450" cy="110" fill="#151b2a" r="4" stroke="#f5bc7e" stroke-width="2"></circle>
+<!-- Week 7 deload point -->
+<circle cx="540" cy="118" fill="#d0dff5" r="4.5" stroke="#232a39" stroke-width="1.5"></circle>
+<!-- Current Week 8 PR point -->
+<circle cx="680" cy="60" fill="#75f3da" r="6" stroke="#0c1321" stroke-width="2"></circle>
+</svg>
+<!-- X-Axis Labels -->
+<div class="flex justify-between items-center pt-2 text-label-sm font-label-sm text-on-surface-variant border-t border-outline-variant">
+<span>W1: 102.5kg</span>
+<span>W2</span>
+<span>W3: 107.5kg</span>
+<span>W4: 110kg</span>
+<span class="text-secondary">W5 (Gap)</span>
+<span>W6: 112.5kg</span>
+<span class="text-tertiary">W7 (Deload)</span>
+<span class="text-primary font-bold">W8: 117.5kg</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-0.5 bg-primary"></span>
+<span>Romanian Deadlift</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-0.5 bg-outline border-dashed"></span>
+<span>Lat Pulldown (Ref)</span>
+</div>
+</div>
+<div class="text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="trending_up">trending_up</span>
+<span>Estimated 1RM trend non-zeroing</span>
+</div>
+</div>
+</section>
+<!-- SECTION 4: Nutrition Stability Card (4 Cols) -->
+<section class="lg:col-span-4 bg-surface-container border border-outline-variant rounded-xl p-6 flex flex-col justify-between space-y-5">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="text-headline-md font-headline-md text-on-surface">Nutrition Stability</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Protein consistency anchor</span>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-high border border-outline-variant flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]" data-icon="egg_alt">egg_alt</span>
+</div>
+</div>
+<!-- Protein Metric Tile -->
+<div class="p-4 rounded-lg bg-surface-container-low border border-outline-variant space-y-2">
+<div class="flex justify-between items-baseline">
+<span class="font-label-md text-label-md text-on-surface-variant">Baseline Intake</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Typical Range</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-numeric-metric text-numeric-metric text-on-surface font-bold">118<span class="text-headline-sm font-headline-sm font-normal text-on-surface-variant">g</span></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/ day typical</span>
+</div>
+<!-- Mini Bar Gauge -->
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full w-[84%]"></div>
+</div>
+<div class="flex justify-between text-[11px] font-label-sm text-on-surface-variant">
+<span>Example only: 110–130g</span>
+<span class="text-secondary font-medium">In Target Zone</span>
+</div>
+</div>
+<!-- Completeness Gauge -->
+<div class="p-4 rounded-lg bg-surface-container-low border border-outline-variant space-y-2">
+<div class="flex justify-between items-baseline">
+<span class="font-label-md text-label-md text-on-surface-variant">Logging Completeness</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">68% Meal Capture</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="font-numeric-metric text-numeric-metric text-primary">68%</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+                  Incomplete intake; no target adjustment from this example.
+                </div>
+</div>
+<!-- Segmented status bars -->
+<div class="grid grid-cols-5 gap-1.5 pt-1">
+<div class="h-2 rounded bg-primary"></div>
+<div class="h-2 rounded bg-primary"></div>
+<div class="h-2 rounded bg-primary"></div>
+<div class="h-2 rounded bg-primary/40"></div>
+<div class="h-2 rounded bg-surface-container-highest"></div>
+</div>
+</div>
+<!-- ADHD Tolerance Explainer Note -->
+<div class="p-3.5 rounded-lg bg-surface-container-high border border-outline-variant space-y-1">
+<div class="flex items-center gap-1.5 text-secondary font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px]" data-icon="psychology">psychology</span>
+                Logging completeness matters
+              </div>
+<p class="text-body-sm font-body-sm text-on-surface leading-relaxed">
+                This example has missing meals. Missing entries do not prove low intake. Review completeness before estimating expenditure or changing targets.
+              </p>
+</div>
+</div>
+<!-- Bottom Micro Action -->
+<div class="pt-3 border-t border-outline-variant flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Anchor: 2 Major Meals / Day</span>
+<button class="text-primary hover:text-primary-fixed font-label-md text-label-md font-semibold flex items-center gap-1">
+              Adjust Buffer
+              <span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</section>
+</div>
+<!-- FOOTER / STATUTORY NOTICE: Explicit Synthetic Demo Note -->
+<footer class="pt-4 pb-8 flex flex-col sm:flex-row items-center justify-between text-body-sm font-body-sm text-on-surface-variant/70 border-t border-outline-variant/60 gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]" data-icon="info">info</span>
+<span>Static design concept — synthetic demo data. Built for zero executive-function fatigue.</span>
+</div>
+<div class="flex items-center gap-4 text-label-sm font-label-sm">
+<span>Momentum v0.1-design (Desktop Web)</span>
+<span>•</span>
+<span class="text-primary">Non-linear Neurodivergent System</span>
+</div>
+</footer>
+</main>
+</div>
+</body></html>

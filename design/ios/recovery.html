@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Momentum - Humane Recovery</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&family=Space+Grotesk:wght@100..900&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-bright": "#323949",
+            "error": "#ffb4ab",
+            "on-tertiary-fixed": "#0d1c2d",
+            "on-secondary-fixed": "#2b1700",
+            "secondary": "#f5bc7e",
+            "surface-dim": "#0c1321",
+            "background": "#0c1321",
+            "primary": "#75f3da",
+            "on-primary-fixed": "#00201b",
+            "inverse-on-surface": "#2a3040",
+            "surface": "#0c1321",
+            "on-secondary-container": "#e5ae71",
+            "secondary-fixed": "#ffddbb",
+            "outline": "#86948f",
+            "outline-variant": "#3c4946",
+            "on-primary-container": "#005a4d",
+            "inverse-surface": "#dce2f6",
+            "on-error": "#690005",
+            "on-secondary": "#482900",
+            "on-primary": "#00382f",
+            "on-surface": "#dce2f6",
+            "surface-container-lowest": "#070e1c",
+            "surface-variant": "#2e3544",
+            "surface-container-low": "#151b2a",
+            "tertiary-container": "#b4c3d9",
+            "surface-container-highest": "#2e3544",
+            "on-error-container": "#ffdad6",
+            "secondary-container": "#67400d",
+            "tertiary-fixed": "#d4e4fa",
+            "tertiary": "#d0dff5",
+            "on-tertiary-container": "#425063",
+            "secondary-fixed-dim": "#f5bc7e",
+            "surface-container": "#19202e",
+            "on-tertiary": "#233143",
+            "surface-container-high": "#232a39",
+            "primary-fixed-dim": "#5bdbc3",
+            "inverse-primary": "#006b5c",
+            "primary-fixed": "#7af8de",
+            "tertiary-fixed-dim": "#b9c8de",
+            "on-primary-fixed-variant": "#005045",
+            "on-surface-variant": "#bbcac5",
+            "on-tertiary-fixed-variant": "#39485a",
+            "primary-container": "#55d6be",
+            "error-container": "#93000a",
+            "on-background": "#dce2f6",
+            "surface-tint": "#5bdbc3",
+            "on-secondary-fixed-variant": "#653e0b"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "margin": "1.5rem",
+            "gutter-desktop": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-lg": "1.5rem",
+            "gutter": "1.25rem",
+            "margin-desktop": "2rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Plus Jakarta Sans"],
+            "display-lg": ["Space Grotesk"],
+            "label-md": ["Space Grotesk"],
+            "headline-sm": ["Space Grotesk"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Space Grotesk"],
+            "numeric-data": ["Space Grotesk"],
+            "label-lg": ["Space Grotesk"],
+            "headline-md": ["Space Grotesk"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Space Grotesk"],
+            "numeric-metric": ["Space Grotesk"]
+          },
+          "fontSize": {
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "500" }],
+            "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "numeric-data": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "numeric-metric": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      font-size: 22px;
+      line-height: 1;
+      display: inline-block;
+    }
+    body {
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex justify-center selection:bg-primary-container selection:text-on-primary-container">
+<!-- Mobile Device Simulation Frame -->
+<div class="w-full max-w-[428px] min-h-screen flex flex-col bg-background relative overflow-x-hidden pb-24 shadow-2xl">
+<!-- iOS Native Status Bar Simulation -->
+<div class="w-full pt-3 px-6 flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm select-none z-30">
+<span class="font-semibold tracking-tight text-on-surface">9:41</span>
+<div class="flex items-center space-x-1.5">
+<span class="material-symbols-outlined !text-[14px]">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined !text-[14px]">wifi</span>
+<span class="material-symbols-outlined !text-[16px]">battery_full</span>
+</div>
+</div>
+<!-- TopAppBar Component (from Shared Components JSON) -->
+<header class="bg-surface-container-low dark:bg-surface-container-low flex justify-between items-center w-full px-margin h-14 z-20">
+<!-- Leading Icon: Exact JSON anchor -->
+<div class="flex items-center gap-2">
+<button aria-label="Status icon" class="flex items-center justify-center w-8 h-8 rounded-full text-primary dark:text-primary hover:text-primary-fixed transition-colors duration-150 active:scale-95">
+<span class="material-symbols-outlined" data-icon="cloud_done">cloud_done</span>
+</button>
+<span class="text-headline-md font-headline-md font-semibold text-primary dark:text-primary tracking-tight">Momentum</span>
+</div>
+<!-- Trailing Action: Exact text from JSON -->
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-[6px] border border-outline-variant/30 text-on-surface-variant">DEMO DATA</span>
+<button aria-label="Close recovery view" class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-on-surface active:scale-95 transition-all">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</header>
+<!-- Main Content Flow -->
+<main class="flex-1 px-margin pt-space-sm space-y-space-md">
+<!-- ADHD Guilt-Free Guarantee Pill -->
+<section class="flex items-center gap-2 bg-surface-container-high/60 border border-outline-variant/20 rounded-full px-3 py-1.5 backdrop-blur-sm">
+<span class="text-sm">🛡️</span>
+<p class="font-label-sm text-label-sm text-primary tracking-wide">
+          Guilt-Free Guarantee: No broken streaks, red warning badges, or punitive alerts.
+        </p>
+</section>
+<!-- Humane Hero Reassurance Banner -->
+<section class="bg-surface-container-low rounded-xl p-space-md border border-outline-variant/30 relative overflow-hidden">
+<div class="absolute -right-10 -bottom-10 w-36 h-36 bg-primary/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="space-y-space-xs relative z-10">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-secondary tracking-wider font-semibold">HUMANE RECOVERY</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-semibold">
+            Welcome Back. Life Happens.
+          </h1>
+<p class="font-body-md text-body-md text-on-surface-variant pt-1 leading-relaxed">
+            Zero streak reset. No backlog homework. Momentum is cumulative, not consecutive. Your previous logs are still here. Choose a manageable next step.
+          </p>
+</div>
+</section>
+<!-- Action Choice Architecture: 3 Non-Punitive Paths -->
+<section class="space-y-space-sm">
+<div class="flex justify-between items-baseline px-1">
+<h2 class="font-label-lg text-label-lg text-on-surface font-medium">Choose Your Pace Today</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Zero penalty paths</span>
+</div>
+<!-- Path 1 (Recommended): Minimum Dose -->
+<article class="group relative bg-surface-container rounded-xl p- space-md p-4 border-2 border-primary-container/70 shadow-sm hover:border-primary transition-all active:scale-[0.99] cursor-pointer">
+<div class="absolute -top-2.5 right-3 bg-primary-container text-on-primary-container font-label-sm text-label-sm font-semibold px-2 py-0.5 rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined !text-[12px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>Recommended</span>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container/15 flex items-center justify-center text-primary mt-0.5 shrink-0">
+<span class="material-symbols-outlined">self_improvement</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Minimum Dose (10-min reset)</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Gentle mobility & bodyweight stretch just to restart the engine without fatigue.
+              </p>
+<div class="flex items-center gap-3 mt-3">
+<span class="font-label-sm text-label-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined !text-[14px]">timer</span> 10 mins
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined !text-[14px]">bolt</span> Low Demand
+                </span>
+</div>
+</div>
+<div class="self-center">
+<span class="material-symbols-outlined text-primary group-hover:translate-x-0.5 transition-transform">chevron_right</span>
+</div>
+</div>
+</article>
+<!-- Path 2: Move Forward Today -->
+<article class="group bg-surface-container-low rounded-xl p-4 border border-outline-variant/30 hover:border-outline-variant transition-all active:scale-[0.99] cursor-pointer">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary mt-0.5 shrink-0">
+<span class="material-symbols-outlined">forward</span>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Move Forward Today</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Jump straight into today's planned session as if nothing was skipped. The missed days are marked as neutral life rest.
+              </p>
+<div class="flex items-center gap-3 mt-3">
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined !text-[14px]">fitness_center</span> Standard Session
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined !text-[14px]">history_toggle_off</span> No Backlog
+                </span>
+</div>
+</div>
+<div class="self-center">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-on-surface transition-colors">chevron_right</span>
+</div>
+</div>
+</article>
+<!-- Path 3: Full Rest & Recovery -->
+<article class="group bg-surface-container-low rounded-xl p-4 border border-outline-variant/30 hover:border-outline-variant transition-all active:scale-[0.99] cursor-pointer">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary mt-0.5 shrink-0">
+<span class="material-symbols-outlined">bedtime</span>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Full Rest & Recovery</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Take an intentional guilt-free recovery day and reset your routine schedule starting tomorrow.
+              </p>
+<div class="flex items-center gap-3 mt-3">
+<span class="font-label-sm text-label-sm text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined !text-[14px]">spa</span> Mindful Pause
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined !text-[14px]">event_repeat</span> Resumes Tomorrow
+                </span>
+</div>
+</div>
+<div class="self-center">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-on-surface transition-colors">chevron_right</span>
+</div>
+</div>
+</article>
+</section>
+<!-- Rescheduling & Elastic Proposal Card -->
+<section class="bg-surface-container-low rounded-xl p-4 border border-outline-variant/30 space-y-3">
+<div class="flex items-center gap-2 text-on-surface font-headline-sm text-headline-sm">
+<span class="material-symbols-outlined text-primary">auto_fix_high</span>
+<span>Adaptive Schedule Adjuster</span>
+</div>
+<div class="bg-surface-container rounded-lg p-3 border border-outline-variant/20">
+<p class="font-body-md text-body-md text-on-surface font-medium">
+            Proposed Plan Update: Preview the next feasible slot after checking availability and recovery spacing.
+          </p>
+<div class="flex items-center gap-2 mt-2">
+<span class="px-2 py-0.5 rounded text-[11px] font-label-sm bg-surface-variant text-on-surface-variant">Thu: 25m Upper</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-sm bg-surface-variant text-on-surface-variant">Sat: 25m Lower</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-sm bg-surface-variant text-on-surface-variant">Sun: Walk</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<button class="font-label-sm text-label-sm text-primary hover:underline flex items-center gap-1 active:scale-95 transition-all">
+<span class="material-symbols-outlined !text-[14px]">undo</span>
+<span>Undo this schedule proposal or customize manually.</span>
+</button>
+</div>
+</section>
+<!-- Capacity Micro-Indicator (Scaffolding Cognitive Load) -->
+<section class="bg-surface-container-lowest/70 rounded-xl p-3 border border-outline-variant/20 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-2.5 h-2.5 rounded-full bg-primary-container"></div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface">Weekly Consistency Rating</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">80% Volume Retained (Non-linear progress)</div>
+</div>
+</div>
+<span class="font-numeric-data text-numeric-data text-primary font-semibold">Healthy</span>
+</section>
+</main>
+<!-- BottomNavBar Component (from Shared Components JSON) -->
+<!-- Destination count: 5, Active item mapped to 'Today' for returning recovery context -->
+<nav aria-label="Main Navigation" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-space-xs pt-space-xs pb-safe h-16 min-h-[44px] bg-surface-container-low dark:bg-surface-container-low max-w-[428px] mx-auto right-0">
+<!-- Tab 1: Today (ACTIVE) -->
+<a aria-current="page" class="flex flex-col items-center justify-center text-primary dark:text-primary min-w-[44px] min-h-[44px] gap-0.5 active:scale-95 transition-transform duration-100 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today" data-weight="fill" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span class="font-label-sm text-label-sm font-semibold">Today</span>
+</a>
+<!-- Tab 2: Train (INACTIVE) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant min-w-[44px] min-h-[44px] gap-0.5 hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="fitness_center">fitness_center</span>
+<span class="font-label-sm text-label-sm">Train</span>
+</a>
+<!-- Tab 3: Food (INACTIVE) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant min-w-[44px] min-h-[44px] gap-0.5 hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="restaurant">restaurant</span>
+<span class="font-label-sm text-label-sm">Food</span>
+</a>
+<!-- Tab 4: Plan (INACTIVE) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant min-w-[44px] min-h-[44px] gap-0.5 hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+<span class="font-label-sm text-label-sm">Plan</span>
+</a>
+<!-- Tab 5: Progress (INACTIVE) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant min-w-[44px] min-h-[44px] gap-0.5 hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+<span class="font-label-sm text-label-sm">Progress</span>
+</a>
+</nav>
+</div>
+</body></html>

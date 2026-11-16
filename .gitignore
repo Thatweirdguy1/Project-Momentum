@@ -1,0 +1,20 @@
+# Private source document, raw captures, and local investigation state
+Momentum_App_Memorandum.pdf
+research/memorandum.txt
+research/public-pages.json
+research/product-details.json
+research/raw-*.json
+design/*-generation.json
+.claude-flow/
+.ruflo/
+.env*
+!.env.example
+__pycache__/
+*.b64
+*.log
+.playwright-mcp/
+data/nutrition/raw/
+data/nutrition/local-only/
+data/exercises/local-only/
+research/local-calculator-assets/
+local-*/

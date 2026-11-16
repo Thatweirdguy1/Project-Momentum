@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Momentum — Adaptive Conditioning &amp; Active Session</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#2e3544",
+            "on-background": "#dce2f6",
+            "on-error-container": "#ffdad6",
+            "surface-container": "#19202e",
+            "surface-bright": "#323949",
+            "secondary": "#f5bc7e",
+            "on-tertiary": "#233143",
+            "on-surface": "#dce2f6",
+            "surface": "#0c1321",
+            "on-primary-container": "#005a4d",
+            "on-secondary": "#482900",
+            "on-primary": "#00382f",
+            "surface-container-high": "#232a39",
+            "outline": "#86948f",
+            "primary-fixed": "#7af8de",
+            "on-surface-variant": "#bbcac5",
+            "tertiary": "#d0dff5",
+            "secondary-container": "#67400d",
+            "on-primary-fixed": "#00201b",
+            "tertiary-container": "#b4c3d9",
+            "on-secondary-fixed": "#2b1700",
+            "primary-container": "#55d6be",
+            "primary": "#75f3da",
+            "error": "#ffb4ab",
+            "tertiary-fixed-dim": "#b9c8de",
+            "on-secondary-fixed-variant": "#653e0b",
+            "on-secondary-container": "#e5ae71",
+            "secondary-fixed": "#ffddbb",
+            "primary-fixed-dim": "#5bdbc3",
+            "inverse-surface": "#dce2f6",
+            "error-container": "#93000a",
+            "surface-dim": "#0c1321",
+            "surface-variant": "#2e3544",
+            "surface-container-lowest": "#070e1c",
+            "on-primary-fixed-variant": "#005045",
+            "secondary-fixed-dim": "#f5bc7e",
+            "on-tertiary-fixed-variant": "#39485a",
+            "inverse-on-surface": "#2a3040",
+            "on-tertiary-container": "#425063",
+            "outline-variant": "#3c4946",
+            "background": "#0c1321",
+            "on-tertiary-fixed": "#0d1c2d",
+            "tertiary-fixed": "#d4e4fa",
+            "inverse-primary": "#006b5c",
+            "surface-tint": "#5bdbc3",
+            "on-error": "#690005",
+            "surface-container-low": "#151b2a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "space-md": "1rem",
+            "margin-desktop": "2rem",
+            "gutter": "1.25rem",
+            "space-xl": "2.5rem",
+            "space-sm": "0.5rem",
+            "gutter-desktop": "1.5rem",
+            "margin": "1.5rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "label-sm": ["Space Grotesk"],
+            "label-lg": ["Space Grotesk"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Space Grotesk"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Space Grotesk"],
+            "headline-sm": ["Space Grotesk"],
+            "display-lg": ["Space Grotesk"],
+            "numeric-metric": ["Space Grotesk"],
+            "numeric-data": ["Space Grotesk"],
+            "headline-lg": ["Space Grotesk"],
+            "body-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "500" }],
+            "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "numeric-metric": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "numeric-data": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Tabular numeric alignment */
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col overflow-x-hidden">
+<!-- ================= TOP APP BAR (Shared Components Tokenized) ================= -->
+<header class="flex justify-between items-center w-full px-6 py-2.5 h-16 border-b border-outline-variant bg-surface-container-low sticky top-0 z-30">
+<!-- Left: Brand / Search / Demo Badge -->
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-3">
+<span class="text-headline-md font-headline-md font-semibold text-primary tracking-tight">Momentum</span>
+<!-- Conspicuous Synth Notice -->
+<span class="px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-surface-container-highest text-secondary border border-secondary/30 flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+          DESIGN DEMO • SYNTHETIC DATA
+        </span>
+</div>
+<!-- Quick Search Bar (docked left per JSON) -->
+<div class="relative w-64 hidden xl:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full pl-9 pr-3 py-1.5 bg-surface-container text-body-sm font-body-sm text-on-surface rounded-lg border border-outline-variant placeholder:text-on-surface-variant/60 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-all" placeholder="Jump to exercise or cue..." type="text"/>
+</div>
+</div>
+<!-- Right: Capacity Pill, Actions & User Controls -->
+<div class="flex items-center gap-3">
+<!-- Energy state pill -->
+<div class="px-3 py-1 bg-surface-container-high rounded-full border border-outline-variant flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-label-md font-label-md text-on-surface">Capacity: Normal</span>
+</div>
+<!-- Trailing Quick Log Button -->
+<button class="px-3.5 py-1.5 bg-primary-container text-on-primary-container rounded-lg text-label-md font-label-md font-semibold hover:bg-primary transition-colors flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+        Quick Log
+      </button>
+<div class="h-5 w-px bg-outline-variant mx-1"></div>
+<!-- Trailing Icon Actions per JSON: ["sync", "tune", "account_circle"] -->
+<button class="p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest rounded-lg transition-colors focus:outline-none" title="Sync Center">
+<span class="material-symbols-outlined text-[20px]">sync</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest rounded-lg transition-colors focus:outline-none" title="Settings &amp; Parameters">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-primary rounded-lg transition-colors focus:outline-none" title="User Profile">
+<span class="material-symbols-outlined text-[24px]">account_circle</span>
+</button>
+</div>
+</header>
+<div class="flex flex-1 relative">
+<!-- ================= FIXED DESKTOP SIDEBAR (SideNavBar Component JSON) ================= -->
+<aside class="fixed top-16 left-0 h-[calc(100vh-4rem)] w-64 flex flex-col justify-between p-4 z-20 bg-surface-container-low border-r border-outline-variant">
+<!-- Brand & Primary Nav -->
+<div class="space-y-4">
+<!-- Sub-header branding info -->
+<div class="px-3 py-2">
+<p class="text-headline-sm font-headline-sm font-bold text-primary">Momentum</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Adaptive Conditioning</p>
+</div>
+<!-- Navigation Tabs: Train is strictly ACTIVE -->
+<nav class="space-y-1">
+<!-- 1: Today -->
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span class="text-label-lg font-label-lg">Today</span>
+</a>
+<!-- 2: Plan -->
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">event_note</span>
+<span class="text-label-lg font-label-lg">Plan</span>
+</a>
+<!-- 3: Train (ACTIVE MATCH PER PROTOCOL) -->
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg bg-surface-container-high text-primary font-medium border-l-2 border-primary" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+<span class="text-label-lg font-label-lg font-semibold">Train</span>
+</a>
+<!-- 4: Food -->
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">restaurant</span>
+<span class="text-label-lg font-label-lg">Food</span>
+</a>
+<!-- 5: Progress -->
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">insights</span>
+<span class="text-label-lg font-label-lg">Progress</span>
+</a>
+<!-- 6: Settings -->
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="text-label-lg font-label-lg">Settings</span>
+</a>
+</nav>
+</div>
+<!-- Sidebar Bottom Cluster -->
+<div class="space-y-3 pt-4 border-t border-outline-variant">
+<!-- Log Energy State CTA (From JSON) -->
+<button class="w-full py-2 px-3 rounded-lg bg-surface-container-high text-on-surface text-label-md font-label-md border border-outline-variant hover:border-primary/40 hover:text-primary transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">battery_charging_full</span>
+          Log Energy State
+        </button>
+<div class="space-y-0.5">
+<!-- Footer Tab 1: Sync Center -->
+<div class="flex items-center justify-between px-3 py-1.5 rounded-lg text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-primary">cloud_done</span>
+<span>Sync Center</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-primary/60"></span>
+</div>
+<!-- Footer Tab 2: Help & Calm -->
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-body-sm font-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">spa</span>
+<span>Help &amp; Calm</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- ================= MAIN WORKSPACE CANVAS ================= -->
+<main class="ml-64 flex-1 flex flex-col xl:flex-row min-w-0 bg-surface">
+<!-- ================= CENTER CANVAS: Workout Logger & Template Editor ================= -->
+<section class="flex-1 p-6 lg:p-8 space-y-6 max-w-5xl">
+<!-- 1. TOP SESSION HEADER & ENERGY VARIANT SWITCHER -->
+<div class="bg-surface-container-low rounded-xl border border-outline-variant p-6 space-y-5">
+<!-- Top Row: Meta, Title, Status -->
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2.5 text-body-sm font-body-sm text-on-surface-variant mb-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                  Today • 17:45 Start
+                </span>
+<span>•</span>
+<span class="text-primary font-medium">Session #42</span>
+<span>•</span>
+<span class="px-2 py-0.5 rounded text-[10px] uppercase font-semibold bg-surface-container-highest text-on-surface-variant">Hypertrophy Block A</span>
+</div>
+<h1 class="text-headline-lg font-headline-lg text-on-surface tracking-tight">Upper Body Hypertrophy (Pull Focus)</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3.5 py-1.5 text-body-sm font-body-sm rounded-lg border border-outline-variant hover:bg-surface-container-high transition-colors text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+                Notes (ADHD Cues)
+              </button>
+<button class="px-3.5 py-1.5 text-body-sm font-body-sm rounded-lg bg-surface-container-high text-primary hover:bg-surface-container-highest transition-colors flex items-center gap-1.5 border border-primary/20 font-medium">
+<span class="material-symbols-outlined text-[16px]">done_all</span>
+                Finish Session
+              </button>
+</div>
+</div>
+<!-- Energy Variant Switcher (Non-punitive volume scaling) -->
+<div class="pt-2 border-t border-outline-variant/60">
+<div class="flex items-center justify-between flex-wrap gap-2 mb-2.5">
+<span class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Adaptive Energy Variant</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant/80">Scaling volume dynamically eliminates failure fatigue</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+<!-- Normal 4 Sets (Active) -->
+<button class="flex items-center justify-between p-3 rounded-lg border border-primary bg-primary/10 text-left transition-all">
+<div>
+<div class="text-label-lg font-label-lg font-semibold text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">energy_savings_leaf</span>
+                    Normal Variant
+                  </div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">4 Sets target • Full stimulus</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+<!-- Short 2 Sets -->
+<button class="flex items-center justify-between p-3 rounded-lg border border-outline-variant bg-surface-container hover:bg-surface-container-high text-left transition-all opacity-80 hover:opacity-100">
+<div>
+<div class="text-label-lg font-label-lg font-medium text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">flash_on</span>
+                    Short Variant
+                  </div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">2 Heavy Sets • Time pinched</div>
+</div>
+<span class="text-label-sm font-label-sm px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant">25m</span>
+</button>
+<!-- Minimum 1 All-out -->
+<button class="flex items-center justify-between p-3 rounded-lg border border-outline-variant bg-surface-container hover:bg-surface-container-high text-left transition-all opacity-80 hover:opacity-100">
+<div>
+<div class="text-label-lg font-label-lg font-medium text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-tertiary">bedtime</span>
+                    Minimum Anchor
+                  </div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">1 manageable set • Effort adjustable</div>
+</div>
+<span class="text-label-sm font-label-sm px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant">12m</span>
+</button>
+</div>
+</div>
+<!-- GYM CROWDED? 1-CLICK SWAP BANNER -->
+<div class="p-3.5 rounded-lg bg-surface-container border border-secondary/30 flex items-center justify-between flex-wrap gap-3">
+<div class="flex items-center gap-3">
+<div class="p-2 rounded-lg bg-secondary/15 text-secondary">
+<span class="material-symbols-outlined text-[20px]">swap_horizontal_circle</span>
+</div>
+<div>
+<p class="text-label-md font-label-md font-semibold text-secondary">Gym Crowded? 1-Click Congestion Swapper</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Station taken? Instant replacement maintains a similar movement pattern with zero planning paralysis.</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-body-sm font-body-sm text-on-surface-variant">Barbell Row → Dumbbell Row</span>
+<button class="px-3 py-1.5 bg-surface-container-high hover:bg-surface-container-highest border border-secondary/40 text-secondary text-label-md font-label-md font-medium rounded-lg transition-colors flex items-center gap-1">
+                Apply Swap
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ================= 2. EXERCISE 1: NEUTRAL GRIP LAT PULLDOWN ================= -->
+<article class="bg-surface-container-low rounded-xl border border-outline-variant overflow-hidden">
+<!-- Exercise Header & Quick Actions -->
+<div class="p-5 border-b border-outline-variant flex flex-wrap items-center justify-between gap-3 bg-surface-container-low">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center text-primary font-headline-sm font-headline-sm">
+                1
+              </div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Neutral Grip Lat Pulldown</h2>
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm bg-surface-container-high text-primary border border-primary/20">Lats &amp; Biceps</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Cable Station • Mag-Grip attachment preferred</p>
+</div>
+</div>
+<!-- Action buttons: Swap Exercise & Form Cues -->
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface border border-outline-variant hover:border-primary/50 text-body-sm font-body-sm flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px] text-primary">published_with_changes</span>
+<span>Swap Exercise</span>
+<span class="text-[11px] text-on-surface-variant">(Cable ⇄ Assisted Pull-up)</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface border border-outline-variant hover:bg-surface-container-high text-body-sm font-body-sm flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px] text-secondary">psychology</span>
+<span>Form Cues</span>
+</button>
+</div>
+</div>
+<!-- Active Form Cue Drawer Preview (ADHD low cognitive load reminder) -->
+<div class="px-5 py-2.5 bg-surface-container/60 border-b border-outline-variant/60 flex items-center gap-3 text-body-sm font-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">tips_and_updates</span>
+<span><strong class="text-on-surface">Anchor Cue:</strong> Depress shoulder blades first. Drive elbows directly into back pockets. 2-second eccentric phase.</span>
+</div>
+<!-- Structured Exercise Logger Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant bg-surface-container text-label-md font-label-md text-on-surface-variant">
+<th class="py-3 px-4 font-medium w-16">Set #</th>
+<th class="py-3 px-4 font-medium min-w-[130px]">Set Type</th>
+<th class="py-3 px-4 font-medium min-w-[190px]">Weight (kg)</th>
+<th class="py-3 px-4 font-medium min-w-[140px]">Reps</th>
+<th class="py-3 px-4 font-medium min-w-[130px]">RIR</th>
+<th class="py-3 px-4 font-medium min-w-[110px]">Rest</th>
+<th class="py-3 px-4 font-medium text-right min-w-[120px]">Status / Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/50 text-body-sm font-body-sm">
+<!-- Row 1: Warm-up (Completed) -->
+<tr class="hover:bg-surface-container-high/40 transition-colors opacity-75">
+<td class="py-3 px-4 font-numeric-data tabular-nums text-on-surface-variant">1</td>
+<td class="py-3 px-4">
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm bg-surface-container-highest text-on-surface-variant">Warm-up</span>
+</td>
+<td class="py-3 px-4 font-numeric-data tabular-nums text-on-surface">
+                    45.0 <span class="text-on-surface-variant text-[11px]">kg</span>
+</td>
+<td class="py-3 px-4 font-numeric-data tabular-nums text-on-surface">
+                    12 <span class="text-on-surface-variant text-[11px]">reps</span>
+</td>
+<td class="py-3 px-4">
+<span class="text-label-md font-label-md text-on-surface-variant">3+ RIR</span>
+</td>
+<td class="py-3 px-4 text-on-surface-variant font-numeric-data">60s</td>
+<td class="py-3 px-4 text-right">
+<span class="inline-flex items-center gap-1 text-primary text-label-md font-label-md font-medium">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                      Logged
+                    </span>
+</td>
+</tr>
+<!-- Row 2: Work Set 1 (Active In-Progress) -->
+<tr class="bg-primary/5 hover:bg-primary/10 transition-colors border-l-2 border-primary">
+<td class="py-3 px-4 font-numeric-data tabular-nums font-semibold text-primary">2</td>
+<td class="py-3 px-4">
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm bg-primary/20 text-primary border border-primary/30 font-medium">Work Set 1</span>
+</td>
+<!-- Weight with Inline Quick Stepper (+2kg) -->
+<td class="py-3 px-4">
+<div class="flex items-center gap-1.5">
+<button class="w-8 h-8 rounded bg-surface-container-high border border-outline-variant hover:border-primary text-on-surface flex items-center justify-center text-label-md font-label-md focus:outline-none" title="Minus 2kg">-2</button>
+<input class="w-16 px-2 py-1 text-center bg-surface-container rounded border border-primary text-numeric-data font-numeric-data tabular-nums text-on-surface focus:outline-none focus:ring-1 focus:ring-primary" type="text" value="70.0"/>
+<button class="w-8 h-8 rounded bg-surface-container-high border border-outline-variant hover:border-primary text-primary flex items-center justify-center text-label-md font-label-md font-semibold focus:outline-none" title="Plus 2kg">+2</button>
+</div>
+</td>
+<!-- Reps Input -->
+<td class="py-3 px-4">
+<div class="flex items-center gap-1.5">
+<input class="w-16 px-2 py-1 text-center bg-surface-container rounded border border-outline-variant text-numeric-data font-numeric-data tabular-nums text-on-surface focus:outline-none focus:border-primary" type="number" value="10"/>
+<span class="text-on-surface-variant text-body-sm">reps</span>
+</div>
+</td>
+<!-- RIR Dropdown (0, 1, 2, 3+) -->
+<td class="py-3 px-4">
+<select class="bg-surface-container rounded border border-outline-variant px-2.5 py-1 text-label-md font-label-md text-on-surface focus:outline-none focus:border-primary">
+<option value="0">0 RIR (Failure)</option>
+<option value="1">1 RIR (1 in tank)</option>
+<option selected="" value="2">2 RIR (2 reps left)</option>
+<option value="3+">3+ RIR (Easy)</option>
+</select>
+</td>
+<td class="py-3 px-4 font-numeric-data tabular-nums text-on-surface">120s</td>
+<!-- Status Action Button -->
+<td class="py-3 px-4 text-right">
+<button class="px-3.5 py-1.5 rounded-lg bg-primary-container text-on-primary-container text-label-md font-label-md font-semibold hover:bg-primary transition-all shadow-sm active:scale-[0.98] inline-flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">check</span>
+                      Log Set
+                    </button>
+</td>
+</tr>
+<!-- Row 3: Work Set 2 (Pending) -->
+<tr class="hover:bg-surface-container-high/30 transition-colors">
+<td class="py-3 px-4 font-numeric-data tabular-nums text-on-surface-variant">3</td>
+<td class="py-3 px-4">
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm bg-surface-container-high text-on-surface-variant">Work Set 2</span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-1.5">
+<button class="w-8 h-8 rounded bg-surface-container border border-outline-variant text-on-surface-variant text-label-md">-2</button>
+<input class="w-16 px-2 py-1 text-center bg-surface-container rounded border border-outline-variant text-numeric-data tabular-nums text-on-surface-variant" type="text" value="70.0"/>
+<button class="w-8 h-8 rounded bg-surface-container border border-outline-variant text-on-surface-variant text-label-md">+2</button>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-1.5">
+<input class="w-16 px-2 py-1 text-center bg-surface-container rounded border border-outline-variant text-numeric-data tabular-nums text-on-surface-variant" type="number" value="10"/>
+<span class="text-on-surface-variant text-body-sm">reps</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<span class="text-label-md font-label-md text-on-surface-variant">Target 2 RIR</span>
+</td>
+<td class="py-3 px-4 text-on-surface-variant font-numeric-data">120s</td>
+<td class="py-3 px-4 text-right">
+<button class="px-3 py-1 rounded bg-surface-container text-on-surface-variant text-label-md font-label-md border border-outline-variant hover:border-outline transition-colors">
+                      Queue
+                    </button>
+</td>
+</tr>
+<!-- Row 4: Back-off Set (Pending) -->
+<tr class="hover:bg-surface-container-high/30 transition-colors">
+<td class="py-3 px-4 font-numeric-data tabular-nums text-on-surface-variant">4</td>
+<td class="py-3 px-4">
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm bg-surface-container-highest text-secondary border border-secondary/30">Back-off</span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-1.5">
+<button class="w-8 h-8 rounded bg-surface-container border border-outline-variant text-on-surface-variant text-label-md">-2</button>
+<input class="w-16 px-2 py-1 text-center bg-surface-container rounded border border-outline-variant text-numeric-data tabular-nums text-on-surface-variant" type="text" value="57.5"/>
+<button class="w-8 h-8 rounded bg-surface-container border border-outline-variant text-on-surface-variant text-label-md">+2</button>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-1.5">
+<input class="w-16 px-2 py-1 text-center bg-surface-container rounded border border-outline-variant text-numeric-data tabular-nums text-on-surface-variant" type="number" value="14"/>
+<span class="text-on-surface-variant text-body-sm">reps</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<span class="text-label-md font-label-md text-on-surface-variant">1 RIR</span>
+</td>
+<td class="py-3 px-4 text-on-surface-variant font-numeric-data">90s</td>
+<td class="py-3 px-4 text-right">
+<button class="px-3 py-1 rounded bg-surface-container text-on-surface-variant text-label-md font-label-md border border-outline-variant hover:border-outline transition-colors">
+                      Queue
+                    </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Card Footer for Lat Pulldown -->
+<div class="p-3 bg-surface-container/40 border-t border-outline-variant flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">history</span>
+<span>Last session: 70kg × 10, 10 reps @ 2 RIR (No joint discomfort)</span>
+</div>
+<button class="text-label-md font-label-md text-primary hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">add</span>
+              Add Drop Set
+            </button>
+</div>
+</article>
+<!-- ================= 2. EXERCISE 2: INCLINE DUMBBELL ROW WITH VARIANT PILLS ================= -->
+<article class="bg-surface-container-low rounded-xl border border-outline-variant overflow-hidden">
+<div class="p-5 border-b border-outline-variant flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high border border-outline-variant flex items-center justify-center text-on-surface font-headline-sm font-headline-sm">
+                2
+              </div>
+<div>
+<div class="flex items-center gap-2.5">
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Horizontal Pull Compound</h2>
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm bg-surface-container-high text-on-surface-variant">Rhomboids / Rear Delts</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Select active equipment variant to update tracking cadence</p>
+</div>
+</div>
+<!-- Variant Pill Switches -->
+<div class="flex items-center bg-surface-container p-1 rounded-lg border border-outline-variant">
+<!-- Active Pill: Incline DB Row -->
+<button class="px-3 py-1.5 rounded-md bg-primary-container text-on-primary-container text-label-sm font-label-sm font-semibold flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">fitness_center</span>
+                Incline DB Row
+              </button>
+<!-- Machine Row Pill -->
+<button class="px-3 py-1.5 rounded-md text-on-surface-variant hover:text-on-surface text-label-sm font-label-sm font-medium transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">precision_manufacturing</span>
+                Machine Row
+              </button>
+<!-- Barbell Bent Over Pill -->
+<button class="px-3 py-1.5 rounded-md text-on-surface-variant hover:text-on-surface text-label-sm font-label-sm font-medium transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">line_weight</span>
+                Barbell Bent Over
+              </button>
+</div>
+</div>
+<!-- Incline DB Row Setup Info / Form Cues -->
+<div class="px-5 py-3 bg-surface-container/30 border-b border-outline-variant flex flex-wrap items-center justify-between gap-3 text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="text-secondary font-medium">Bench Angle:</span> 30° Incline Chest-Supported
+              <span class="text-outline-variant">•</span>
+<span class="text-secondary font-medium">Grip:</span> Neutral / Semi-Pronated
+            </div>
+<div class="flex items-center gap-3">
+<button class="text-label-md font-label-md text-primary hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">videocam</span>
+                3s Video Cue
+              </button>
+<button class="text-label-md font-label-md text-on-surface-variant hover:text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+                Customize Sets
+              </button>
+</div>
+</div>
+<!-- Quick Matrix Preview for Exercise 2 -->
+<div class="p-5">
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+<div class="p-3.5 rounded-lg bg-surface-container border border-outline-variant/80 flex items-center justify-between">
+<div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">SET 1 (WARM)</div>
+<div class="text-numeric-data font-numeric-data text-on-surface mt-0.5">24.0 kg × 12 reps</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant">Target 3 RIR</div>
+</div>
+<button class="w-8 h-8 rounded bg-surface-container-high border border-outline-variant text-on-surface-variant hover:text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container border border-outline-variant/80 flex items-center justify-between">
+<div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">SET 2 (WORK)</div>
+<div class="text-numeric-data font-numeric-data text-on-surface mt-0.5">32.0 kg × 8-10 reps</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant">Target 1.5 RIR</div>
+</div>
+<button class="w-8 h-8 rounded bg-surface-container-high border border-outline-variant text-on-surface-variant hover:text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container border border-outline-variant/80 flex items-center justify-between">
+<div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">SET 3 (WORK)</div>
+<div class="text-numeric-data font-numeric-data text-on-surface mt-0.5">32.0 kg × 8-10 reps</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant">Target 1.0 RIR</div>
+</div>
+<button class="w-8 h-8 rounded bg-surface-container-high border border-outline-variant text-on-surface-variant hover:text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Low Stimulation Encouragement Footer (ADHD-safe, no streak pressure) -->
+<footer class="pt-4 pb-8 text-center text-body-sm font-body-sm text-on-surface-variant/70 border-t border-outline-variant/40 space-y-1">
+<p>Adaptive Volume Engine • Uncompleted sets remain in history; they are never automatically added to the next workout.</p>
+<p class="text-label-sm font-label-sm text-outline">Static design concept — synthetic demo data</p>
+</footer>
+</section>
+<!-- ================= 3. RIGHT SIDE RAIL / UTILITY PANEL ================= -->
+<aside class="w-full xl:w-80 bg-surface-container-low border-l border-outline-variant p-6 space-y-6 flex-shrink-0">
+<!-- FLOATING REST INTERVAL TIMER -->
+<div class="bg-surface-container rounded-xl border border-outline-variant p-5 space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">timer</span>
+<span class="text-label-md font-label-md font-semibold text-on-surface">Rest Interval</span>
+</div>
+<span class="text-label-sm font-label-sm px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">Auto-Started</span>
+</div>
+<!-- Big Countdown Display -->
+<div class="text-center py-2 bg-surface-container-lowest rounded-lg border border-outline-variant/60">
+<span class="text-display-lg font-display-lg font-bold text-primary tracking-tight tabular-nums">01:42</span>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Lat Pulldown Recovery Window</div>
+</div>
+<!-- Controls: -30s, +30s, Skip -->
+<div class="grid grid-cols-3 gap-2">
+<button class="py-2 rounded-lg bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant text-label-md font-label-md text-on-surface transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px]">remove</span> 30s
+            </button>
+<button class="py-2 rounded-lg bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant text-label-md font-label-md text-primary font-medium transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px]">add</span> 30s
+            </button>
+<button class="py-2 rounded-lg bg-surface-container-highest hover:bg-outline-variant text-label-md font-label-md text-secondary transition-colors flex items-center justify-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[16px]">skip_next</span> Skip
+            </button>
+</div>
+</div>
+<!-- WARM-UP AUTO-CALCULATOR TABLE -->
+<div class="bg-surface-container rounded-xl border border-outline-variant p-5 space-y-3.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">calculate</span>
+<span class="text-label-md font-label-md font-semibold text-on-surface">Warm-up Auto-Calculator</span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">70kg Target</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+            Gradual CNS ramping without accumulating metabolic fatigue.
+          </p>
+<div class="rounded-lg border border-outline-variant/60 overflow-hidden bg-surface-container-lowest">
+<table class="w-full text-left text-body-sm font-body-sm">
+<thead class="bg-surface-container-high text-label-sm font-label-sm text-on-surface-variant border-b border-outline-variant/60">
+<tr>
+<th class="py-2 px-3 font-medium">Stage</th>
+<th class="py-2 px-3 font-medium">Intensity</th>
+<th class="py-2 px-3 font-medium text-right">Load</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/40 font-numeric-data tabular-nums">
+<tr>
+<td class="py-2 px-3 text-on-surface">Set A</td>
+<td class="py-2 px-3 text-on-surface-variant">50% × 8</td>
+<td class="py-2 px-3 text-right text-primary font-semibold">35.0 kg</td>
+</tr>
+<tr>
+<td class="py-2 px-3 text-on-surface">Set B</td>
+<td class="py-2 px-3 text-on-surface-variant">70% × 4</td>
+<td class="py-2 px-3 text-right text-primary font-semibold">50.0 kg</td>
+</tr>
+<tr>
+<td class="py-2 px-3 text-on-surface">Set C</td>
+<td class="py-2 px-3 text-on-surface-variant">90% × 1</td>
+<td class="py-2 px-3 text-right text-primary font-semibold">62.5 kg</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- RIR CALIBRATION REFERENCE LEGEND -->
+<div class="bg-surface-container rounded-xl border border-outline-variant p-5 space-y-3.5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">help_center</span>
+<span class="text-label-md font-label-md font-semibold text-on-surface">RIR Calibration Legend</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+            Reps In Reserve gauges proximity to technical failure without guesswork.
+          </p>
+<div class="space-y-2">
+<!-- RIR 0 -->
+<div class="p-2.5 rounded-lg bg-surface-container-lowest border border-outline-variant/60 flex items-start gap-2.5">
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm bg-error/15 text-error font-bold mt-0.5">RIR 0</span>
+<div>
+<p class="text-label-md font-label-md font-medium text-on-surface">Technical Failure</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Zero reps remaining with clean biomechanics.</p>
+</div>
+</div>
+<!-- RIR 1 -->
+<div class="p-2.5 rounded-lg bg-surface-container-lowest border border-outline-variant/60 flex items-start gap-2.5">
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm bg-secondary/15 text-secondary font-bold mt-0.5">RIR 1</span>
+<div>
+<p class="text-label-md font-label-md font-medium text-on-surface">1 Rep Left in Tank</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Very high effort, form intact.</p>
+</div>
+</div>
+<!-- RIR 2 -->
+<div class="p-2.5 rounded-lg bg-surface-container-lowest border border-primary/30 flex items-start gap-2.5">
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm bg-primary/20 text-primary font-bold mt-0.5">RIR 2</span>
+<div>
+<p class="text-label-md font-label-md font-semibold text-primary">About 2 Reps Remaining</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">An estimate of effort, not a guaranteed optimum.</p>
+</div>
+</div>
+<!-- RIR 3+ -->
+<div class="p-2.5 rounded-lg bg-surface-container-lowest border border-outline-variant/60 flex items-start gap-2.5">
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm bg-surface-container-highest text-on-surface-variant font-bold mt-0.5">RIR 3+</span>
+<div>
+<p class="text-label-md font-label-md font-medium text-on-surface">Sub-maximal / Primer</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Appropriate for warm-ups or deload protocols.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- ADHD Sensory Calm Check-in Box -->
+<div class="p-4 rounded-xl bg-surface-container border border-outline-variant flex items-center gap-3">
+<span class="material-symbols-outlined text-[24px] text-tertiary">self_improvement</span>
+<div>
+<p class="text-label-md font-label-md font-medium text-on-surface">Feeling Sensory Fatigue?</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Switch session to Minimum Anchor with 1 click.</p>
+</div>
+</div>
+</aside>
+</main>
+</div>
+</body></html>

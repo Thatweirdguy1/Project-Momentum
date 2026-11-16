@@ -1,0 +1,18 @@
+{
+  "usda_foods_by_archive": {
+    "usda_foundation_2026-10-29.zip": 424,
+    "usda_sr_legacy_2018-04.zip": 7793,
+    "usda_fndds_2024-10-31.zip": 5432
+  },
+  "usda_macro_rows": 13649,
+  "usda_nutrient_rows": 1019278,
+  "usda_missing_energy_rows": 51,
+  "indb_foods_local_only": 1014,
+  "indb_macro_rows_local_only": 2028,
+  "indb_original_columns": 82,
+  "who_food_macro_rows": 0,
+  "indb_redistribution": "Not published: no explicit dataset redistribution license established",
+  "missing_value_policy": "Empty CSV cell means unknown, never zero",
+  "basis": "USDA per 100 g; INDB per 100 g and separately per source serving; household mass not inferred",
+  "negative_source_values_flagged": 10
+}
